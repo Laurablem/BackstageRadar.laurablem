@@ -89,12 +89,15 @@ nav ul li .dropdown li a {
   color: #000065; /* Linkfarve */
   font-size: 18px; /* Mindre tekst til undermenuer */
   display: block; /* Gør hvert link til en blok for korrekt linjeafstand */
-  width: 100%; /* Sørger for, at hele boksen er klikbar */
+  padding: 10px; /* Ens padding omkring teksten */
+  width: calc(100% - 20px); /* Trækker padding fra for at passe boksen til containeren */
+  box-sizing: border-box; /* Sørger for, at padding ikke påvirker bredden */
 }
 
 nav ul li .dropdown li a:hover {
   background-color: #000065; /* Baggrund ved hover */
   color: #FFF7F8; /* Kontrastfarve */
+  border-radius: 5px; /* Tilføj lidt afrunding for en flot effekt */
 }
 
 /* Vis dropdown-menu ved hover */
