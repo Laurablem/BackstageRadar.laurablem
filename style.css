@@ -86,7 +86,7 @@ nav ul li a {
 /* Responsiv styling */
 
 /* Tablet og mobil */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) { /* Ændret breakpoint */
   header {
     padding: 30px 20px 20px; /* Justerer padding for mindre skærme */
   }
@@ -135,7 +135,7 @@ nav ul li a {
 }
 
 /* Laptop og desktop */
-@media (min-width: 1025px) {
+@media (min-width: 1401px) { /* Ændret breakpoint */
   nav ul {
     display: flex; /* Gendan navigation */
     gap: 2rem; /* Holder symmetrisk afstand */
