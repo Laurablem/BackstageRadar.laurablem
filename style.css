@@ -39,6 +39,7 @@ nav ul.right {
 
 nav ul li {
   text-align: center;
+  position: relative; /* For at placere dropdown relativt til hovedmenuen */
 }
 
 nav ul li a {
@@ -60,6 +61,45 @@ nav ul li a {
   display: block;
   max-height: 150px; /* Standard logo-størrelse */
   height: auto;
+}
+
+/* Dropdown-menu styling */
+nav ul li .dropdown {
+  display: none; /* Skjul undermenu som standard */
+  position: absolute;
+  top: 100%; /* Placer under hovedmenuen */
+  left: 0;
+  background-color: #FFF7F8; /* Matcher headerens baggrundsfarve */
+  border: 1px solid #000065;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style-type: none;
+  padding: 10px 0; /* Tilføj padding for større dropdown */
+  width: 250px; /* Juster til ønsket bredde */
+}
+
+nav ul li .dropdown li {
+  padding: 10px 20px;
+  text-align: left; /* Venstrejuster tekst */
+  white-space: nowrap; /* Sørger for, at teksten ikke brydes */
+}
+
+nav ul li .dropdown li a {
+  text-decoration: none;
+  color: #000065; /* Linkfarve */
+  font-size: 18px; /* Mindre tekst til undermenuer */
+  display: block; /* Gør hvert link til en blok for korrekt linjeafstand */
+  width: 100%; /* Sørger for, at hele boksen er klikbar */
+}
+
+nav ul li .dropdown li a:hover {
+  background-color: #000065; /* Baggrund ved hover */
+  color: #FFF7F8; /* Kontrastfarve */
+}
+
+/* Vis dropdown-menu ved hover */
+nav ul li:hover .dropdown {
+  display: block; /* Vis dropdown ved hover */
 }
 
 /* Burger-menu styling */
@@ -122,6 +162,15 @@ nav ul li a {
   nav ul li {
     text-align: center;
     padding: 15px 0; /* Ens afstand mellem punkterne */
+  }
+
+  nav ul li .dropdown {
+    position: static; /* Undermenuer justeres til mobilvisning */
+    display: none;
+  }
+
+  nav ul li.active .dropdown {
+    display: block; /* Vis undermenu på mobil */
   }
 
   .logo {
