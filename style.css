@@ -1,22 +1,125 @@
-/* Mobil-styling */
-@media (max-width: 767px) {
-    body {
-      background-color: lightblue;
-    }
-  }
-  
-  /* Tablet-styling */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    body {
-      background-color: lightgreen;
-    }
-  }
-  
-  /* Laptop/Desktop-styling */
-  @media (min-width: 1025px) {
-    body {
-      background-color: lightcoral;
-    }
+/* Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+  background-color: #FFFFFF;
+  padding: 30px 20px; /* Giver mere plads til logoet */
+  position: relative;
+  border-bottom: 2px solid #740C10;
+  height: auto; /* Dynamisk højde */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 2rem; /* Afstand mellem de to menuer og logoet */
+}
+
+/* Navigation styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex: 1; /* Fordeler plads ligeligt til begge menuer */
+  gap: 2rem; /* Tilføjer luft mellem menupunkterne */
+  justify-content: space-between;
+}
+
+nav ul.left,
+nav ul.right {
+  flex: 0 0 40%; /* Giver plads til logoet i midten */
+  justify-content: space-evenly; /* Sikrer lige afstand mellem menupunkterne */
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #740C10;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+/* Logo styling */
+.logo {
+  position: relative; /* Ændret fra absolute for bedre layoutstyring */
+  flex: 0 0 auto; /* Sørger for, at logoet har fast størrelse */
+  margin: 0 2rem; /* Tilføjer afstand mellem logoet og menuer */
+}
+
+.logo-img {
+  display: block;
+  max-height: 100px; /* Sikrer, at logoet holder sig inden for headeren */
+}
+
+/* Burger-menu styling */
+.burger-menu {
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-menu button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-icon {
+  width: 40px;
+  height: auto;
+}
+
+/* Responsiv styling */
+
+/* Tablet og mobil */
+@media (max-width: 1024px) {
+  nav ul {
+      display: none; /* Skjul navigation */
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: #FFFFFF;
+      border-top: 2px solid #740C10;
   }
 
-  
+  nav ul.active {
+      display: flex; /* Vis navigation */
+  }
+
+  .burger-menu {
+      display: block; /* Vis burger-menu */
+  }
+
+  .logo {
+      position: absolute; /* Centrer logoet på mindre skærme */
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+
+/* Laptop og desktop */
+@media (min-width: 1025px) {
+  nav ul {
+      display: flex; /* Gendan navigation */
+  }
+
+  .burger-menu {
+      display: none; /* Skjul burger-menu */
+  }
+}
