@@ -102,6 +102,9 @@ nav ul li a {
     width: 100%;
     background-color: #FFFFFF;
     border-top: 2px solid #740C10;
+    max-height: 100vh; /* Sikrer, at menuen ikke går ud over skærmen */
+    overflow-y: auto; /* Tilføjer scrolling, hvis der er mange menupunkter */
+    z-index: 1000; /* Sørger for, at menuen altid er øverst */
   }
 
   nav ul.active {
