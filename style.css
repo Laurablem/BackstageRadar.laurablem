@@ -8,34 +8,31 @@ body, h1, h2, p, ul, li {
 /* Header styling */
 header {
   background-color: #FFFFFF;
-  padding: 30px 20px; /* Giver mere plads til logoet */
+  padding: 30px 20px; /* Standard padding */
   position: relative;
   border-bottom: 2px solid #740C10;
   height: auto; /* Dynamisk højde */
 }
 
+/* Navigation styling */
 nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-end; /* Sørger for, at menupunkterne justeres til bunden af logoet */
+  justify-content: space-between; /* Sørger for plads mellem elementer */
   position: relative;
-  gap: 2rem; /* Afstand mellem de to menuer og logoet */
 }
 
-/* Navigation styling */
+/* Navigation: venstre og højre menuer */
 nav ul {
   list-style-type: none;
   display: flex;
-  align-items: center;
-  flex: 1; /* Fordeler plads ligeligt til begge menuer */
-  gap: 2rem; /* Tilføjer luft mellem menupunkterne */
-  justify-content: space-between;
+  gap: 2rem; /* Afstand mellem menupunkterne */
+  flex: 1; /* Giver venstre og højre navigation lige meget plads */
 }
 
 nav ul.left,
 nav ul.right {
-  flex: 0 0 40%; /* Giver plads til logoet i midten */
-  justify-content: space-evenly; /* Sikrer lige afstand mellem menupunkterne */
+  justify-content: space-between; /* Ens afstand mellem punkterne */
 }
 
 nav ul li {
@@ -52,14 +49,15 @@ nav ul li a {
 
 /* Logo styling */
 .logo {
-  position: relative; /* Ændret fra absolute for bedre layoutstyring */
-  flex: 0 0 auto; /* Sørger for, at logoet har fast størrelse */
-  margin: 0 2rem; /* Tilføjer afstand mellem logoet og menuer */
+  display: flex;
+  align-items: flex-end; /* Justerer logoets bund til menupunkterne */
+  margin: 0 auto; /* Centrerer logoet mellem venstre og højre menu */
 }
 
 .logo-img {
   display: block;
-  max-height: 100px; /* Sikrer, at logoet holder sig inden for headeren */
+  max-height: 150px; /* Standard logo-størrelse */
+  height: auto; /* Bevarer proportionerne */
 }
 
 /* Burger-menu styling */
@@ -79,7 +77,7 @@ nav ul li a {
 }
 
 .burger-icon {
-  width: 40px;
+  width: 40px; /* Standard burger-menu størrelse */
   height: auto;
 }
 
@@ -87,39 +85,52 @@ nav ul li a {
 
 /* Tablet og mobil */
 @media (max-width: 1024px) {
-  nav ul {
-      display: none; /* Skjul navigation */
-      flex-direction: column;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      background-color: #FFFFFF;
-      border-top: 2px solid #740C10;
-  }
-
-  nav ul.active {
-      display: flex; /* Vis navigation */
+  header {
+    padding: 30px 20px 20px; /* Justerer padding for mindre skærme */
   }
 
   .burger-menu {
-      display: block; /* Vis burger-menu */
+    display: block; /* Vis burger-menu */
+  }
+
+  nav ul {
+    display: none; /* Skjul navigation */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 2px solid #740C10;
+  }
+
+  nav ul.active {
+    display: flex; /* Vis navigation */
   }
 
   .logo {
-      position: absolute; /* Centrer logoet på mindre skærme */
-      left: 50%;
-      transform: translateX(-50%);
+    align-items: flex-end; /* Holder logoets bund på linje med menupunkterne */
+    margin: 0 auto; /* Sikrer centreret logo */
+  }
+
+  .logo-img {
+    max-height: 120px; /* Mindre logo på mindre skærme */
   }
 }
 
 /* Laptop og desktop */
 @media (min-width: 1025px) {
   nav ul {
-      display: flex; /* Gendan navigation */
+    display: flex; /* Gendan navigation */
+    gap: 2rem; /* Holder symmetrisk afstand */
   }
 
   .burger-menu {
-      display: none; /* Skjul burger-menu */
+    display: none; /* Skjul burger-menu */
+  }
+
+  .logo {
+    align-items: flex-end; /* Justerer logoets bund til menupunkterne */
+    margin: 0 auto; /* Bevarer centreret logo */
   }
 }
