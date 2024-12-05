@@ -11,7 +11,7 @@
         <nav>
             <!-- Venstre navigation -->
             <ul class="nav-links left">
-                <li><a href="#events">Kunstnere  Events</a></li>
+                <li><a href="#events">Kunstnere & Events</a></li>
                 <li><a href="#fordele">Fordele</a></li>
                 <li><a href="#webshop">Webshop</a></li>
             </ul>
@@ -50,10 +50,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.getElementById('burger-btn');
+            const leftNav = document.querySelector('.nav-links.left');
+            const rightNav = document.querySelector('.nav-links.right');
+
+            // Kombinér venstre og højre navigation i mobilvisning
             burgerBtn.addEventListener('click', () => {
-                document.querySelectorAll('.nav-links').forEach(nav => {
-                    nav.classList.toggle('active');
-                });
+                leftNav.classList.toggle('active');
+                rightNav.classList.toggle('active');
+
+                // Flyt højre navigation til venstre navigation
+                if (leftNav.classList.contains('active')) {
+                    rightNav.querySelectorAll('li').forEach((item) => {
+                        const clone = item.cloneNode(true);
+                        leftNav.appendChild(clone);
+                    });
+                    rightNav.style.display = 'none';
+                } else {
+                    // Fjern tilføjede elementer ved lukning
+                    const originalLength = 3; // Antal originale elementer i venstre navigation
+                    while (leftNav.children.length > originalLength) {
+                        leftNav.removeChild(leftNav.lastChild);
+                    }
+                    rightNav.style.display = '';
+                }
             });
         });
     </script>

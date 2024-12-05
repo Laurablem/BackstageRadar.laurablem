@@ -9,10 +9,13 @@ body, h1, h2, p, ul, li {
 header {
   background-color: #FFFFFF;
   padding: 30px 20px; /* Standard padding */
-  position: relative;
-  border-bottom: 2px solid #740C10;
-  height: auto; /* Dynamisk højde */
+  position: sticky; /* Gør headeren sticky */
+  top: 0; /* Sørger for, at headeren starter øverst */
+  z-index: 1000; /* Sørger for, at headeren altid ligger øverst */
+  border-bottom: 2px solid #000065;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tilføjer en skygge for en flot effekt */
 }
+
 
 /* Navigation styling */
 nav {
@@ -41,7 +44,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #740C10;
+  color: #000065; /* Ændret farve */
   font-weight: bold;
   font-size: 24px;
   padding: 10px 20px;
@@ -57,7 +60,7 @@ nav ul li a {
 .logo-img {
   display: block;
   max-height: 150px; /* Standard logo-størrelse */
-  height: auto; /* Bevarer proportionerne */
+  height: auto;
 }
 
 /* Burger-menu styling */
@@ -93,26 +96,37 @@ nav ul li a {
     display: block; /* Vis burger-menu */
   }
 
+  /* Saml navigation */
   nav ul {
-    display: none; /* Skjul navigation */
+    display: none; /* Skjul navigation som standard */
     flex-direction: column;
     position: absolute;
     top: 80px;
     left: 0;
     width: 100%;
     background-color: #FFFFFF;
-    border-top: 2px solid #740C10;
-    max-height: 100vh; /* Sikrer, at menuen ikke går ud over skærmen */
-    overflow-y: auto; /* Tilføjer scrolling, hvis der er mange menupunkter */
-    z-index: 1000; /* Sørger for, at menuen altid er øverst */
+    border-top: 2px solid #000065; /* Ændret farve */
+    z-index: 1000;
+    padding: 0;
   }
 
   nav ul.active {
     display: flex; /* Vis navigation */
   }
 
+  nav ul.left.active, 
+  nav ul.right.active {
+    display: flex;
+    flex-direction: column; /* Lodret menu */
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px 0; /* Ens afstand mellem punkterne */
+  }
+
   .logo {
-    align-items: flex-end; /* Holder logoets bund på linje med menupunkterne */
+    align-items: center;
     margin: 0 auto; /* Sikrer centreret logo */
   }
 
