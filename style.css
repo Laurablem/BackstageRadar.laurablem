@@ -1,4 +1,8 @@
-/* Reset */
+h1, h2, h3 {
+  font-family: Arial Black, Gadget, sans-serif;
+  font-weight: bold;
+}
+
 
 body, h1, h2, p, ul, li {
   margin: 0;
@@ -44,10 +48,11 @@ nav ul li {
 }
 
 nav ul li a {
+  font-family: Arial Black, Gadget, sans-serif;
   text-decoration: none;
   color: #000065; /* Farve */
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
   padding: 10px 20px;
 }
 
@@ -334,7 +339,6 @@ footer .social-icons img {
 
 /* Body styling */
 body {
-  font-family: Arial, sans-serif;
   background-color: #FFF7F8;
   color: #000065;
   text-align: center;
@@ -357,6 +361,9 @@ body {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.5;
+}
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /* Container for highlights */
@@ -556,4 +563,13 @@ header {
       max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
       margin: 0 auto; /* Centrer rammen på siden */
   }
+}
+
+
+html, body {
+  background-image: url(images/klap.jpg); /* Sti til dit billede */
+  background-size: cover; /* Billedet dækker hele baggrunden */
+  background-position: center; /* Billedet centreres */
+  background-repeat: no-repeat; /* Undgå gentagelse af billedet */
+  background-color: #ffffff; /* Baggrundsfarve som fallback */
 }
