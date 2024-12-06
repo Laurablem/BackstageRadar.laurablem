@@ -264,3 +264,58 @@ nav ul li:focus-within .dropdown {
     margin: 0 auto;
   }
 }
+
+/* Footer styling */
+footer {
+  background-color: #FFF7F8; 
+  padding: 20px 0;
+  text-align: center;
+  position: sticky; /* Altid i bunden */
+  bottom: 0;
+  width: 100%;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Afstand mellem ikoner */
+}
+
+footer .social-icons a {
+  display: inline-block;
+  width: 40px; /* Standard ikonstørrelse */
+  height: 40px;
+}
+
+footer .social-icons img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Breakpoints */
+
+/* Mobil: op til 767px */
+@media (max-width: 767px) {
+  footer .social-icons {
+    flex-direction: row; /* Vis ikoner i kolonne */
+    gap: 1.5rem; /* Lidt større afstand mellem ikoner */
+  }
+}
+
+/* Tablet: 768px til 1200px */
+@media (min-width: 768px) and (max-width: 1200px) {
+  footer .social-icons {
+    flex-direction: row; /* Behold rækken */
+    gap: 2rem; /* Lidt større afstand mellem ikoner */
+  }
+}
+
+/* Laptop: 1201px og større */
+@media (min-width: 1201px) {
+  footer .social-icons {
+    flex-direction: row; /* Ikoner på række */
+    gap: 2.5rem; /* Større afstand for brede skærme */
+  }
+}
