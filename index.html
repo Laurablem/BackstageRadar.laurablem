@@ -13,7 +13,7 @@
             <ul class="nav-links left">
                 <li>
                     <a href="#events">Kunstnere & Events</a>
-                    <ul class="dropdown"> <!-- Undermenu -->
+                    <ul class="dropdown">
                         <li><a href="#Kommende Kunstnere">Kommende Kunstnere</a></li>
                         <li><a href="#Tidligere Kunstnere">Tidligere Kunstnere</a></li>
                         <li><a href="#Kommende Events">Kommende Events</a></li>
@@ -22,12 +22,19 @@
                 </li>
                 <li>
                     <a href="#fordele">Fordele</a>
-                    <ul class="dropdown"> <!-- Undermenu -->
-                        <li><a href="#medlemskab">Medlemskab</a></li>
-                        <li><a href="#rabatter">Rabatter</a></li>
+                    <ul class="dropdown">
+                        <li><a href="#Bliv Medlem">Bliv Medlem</a></li>
+                        <li><a href="#pointsystem">Pointsystem</a></li>
+                        <li><a href="#Pre-sale">Pre-sale</a></li>
+                        <li><a href="#Konkurancer">Konkurancer</a></li>
                     </ul>
                 </li>
-                <li><a href="#webshop">Webshop</a></li>
+                <li>
+                    <a href="#webshop">Webshop</a>
+                    <ul class="dropdown">
+                        <li><a href="#Merch">Merch</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <!-- Logo -->
@@ -37,15 +44,22 @@
 
             <!-- Højre navigation -->
             <ul class="nav-links right">
+                <li><a href="#galleri">Galleri</a></li>
                 <li>
-                    <a href="#galleri">Galleri</a>
-                    <ul class="dropdown"> <!-- Undermenu -->
-                        <li><a href="#billeder">Billeder</a></li>
-                        <li><a href="#videoer">Videoer</a></li>
+                    <a href="#om-radar">Om Radar</a>
+                    <ul class="dropdown">
+                        <li><a href="#Radars Historie">Radars Historie</a></li>
+                        <li><a href="#Huset og de frivillige">Huset og de frivillige</a></li>
+                        <li><a href="#Baren">Baren</a></li>
+                        <li><a href="#Kontakt">Kontakt</a></li>
                     </ul>
                 </li>
-                <li><a href="#om-radar">Om Radar</a></li>
-                <li><a href="#profil">Din Profil</a></li>
+                <li>
+                    <a href="#profil">Din Profil</a>
+                    <ul class="dropdown">
+                        <li><a href="#Brevkassen">#Brevkassen</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <!-- Burger-menu -->
@@ -66,22 +80,28 @@
             </p>
         </section>
     </main>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.getElementById('burger-btn');
             const leftNav = document.querySelector('.nav-links.left');
             const rightNav = document.querySelector('.nav-links.right');
-
+    
             // Kombinér venstre og højre navigation i mobilvisning
             burgerBtn.addEventListener('click', () => {
                 leftNav.classList.toggle('active');
                 rightNav.classList.toggle('active');
-
+    
                 if (leftNav.classList.contains('active')) {
+                    // Tilføj kun de ønskede elementer fra højre navigation
                     rightNav.querySelectorAll('li').forEach(item => {
-                        const clone = item.cloneNode(true);
-                        leftNav.appendChild(clone);
+                        const linkText = item.querySelector('a').textContent.trim();
+    
+                        // Fjern de specifikke elementer fra højre navigation
+                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', '#Brevkassen'].includes(linkText)) {
+                            const clone = item.cloneNode(true);
+                            leftNav.appendChild(clone);
+                        }
                     });
                     rightNav.style.display = 'none';
                 } else {
@@ -94,5 +114,7 @@
             });
         });
     </script>
+    
+
 </body>
 </html>

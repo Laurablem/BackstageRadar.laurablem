@@ -7,20 +7,20 @@ body, h1, h2, p, ul, li {
 
 /* Header styling */
 header {
-  background-color: #FFF7F8; /* Ændret baggrundsfarve */
+  background-color: #FFF7F8; /* Baggrundsfarve */
   padding: 30px 20px; /* Standard padding */
-  position: sticky; /* Gør headeren sticky */
-  top: 0; /* Sørger for, at headeren starter øverst */
-  z-index: 1000; /* Sørger for, at headeren altid ligger øverst */
+  position: sticky; /* Sticky header */
+  top: 0; /* Start øverst */
+  z-index: 1000; /* Øverst i lag */
   border-bottom: 2px solid #000065;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tilføjer en skygge for en flot effekt */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
 }
 
 /* Navigation styling */
 nav {
   display: flex;
-  align-items: flex-end; /* Sørger for, at menupunkterne justeres til bunden af logoet */
-  justify-content: space-between; /* Sørger for plads mellem elementer */
+  align-items: flex-end;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -29,22 +29,22 @@ nav ul {
   list-style-type: none;
   display: flex;
   gap: 2rem; /* Afstand mellem menupunkterne */
-  flex: 1; /* Giver venstre og højre navigation lige meget plads */
+  flex: 1; /* Fordel pladsen ligeligt */
 }
 
 nav ul.left,
 nav ul.right {
-  justify-content: space-between; /* Ens afstand mellem punkterne */
+  justify-content: space-between;
 }
 
 nav ul li {
   text-align: center;
-  position: relative; /* For at placere dropdown relativt til hovedmenuen */
+  position: relative; /* Position for dropdown-menuer */
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #000065; /* Ændret farve */
+  color: #000065; /* Farve */
   font-weight: bold;
   font-size: 24px;
   padding: 10px 20px;
@@ -53,57 +53,117 @@ nav ul li a {
 /* Logo styling */
 .logo {
   display: flex;
-  align-items: flex-end; /* Justerer logoets bund til menupunkterne */
-  margin: 0 auto; /* Centrerer logoet mellem venstre og højre menu */
+  align-items: flex-end;
+  margin: 0 auto; /* Centrer logoet */
 }
 
 .logo-img {
   display: block;
-  max-height: 150px; /* Standard logo-størrelse */
+  max-height: 150px;
   height: auto;
 }
 
+/* Navigation styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem; /* Afstand mellem menupunkterne */
+  flex: 1; /* Fordel pladsen ligeligt */
+  justify-content: center; /* Centrér hele menuen horisontalt */
+}
+
 /* Dropdown-menu styling */
+nav ul li {
+  position: relative; /* Sørg for, at dropdown er placeret i forhold til forælderen */
+}
+
 nav ul li .dropdown {
-  display: none; /* Skjul undermenu som standard */
+  display: none; /* Skjul dropdown som standard */
   position: absolute;
-  top: 100%; /* Placer under hovedmenuen */
-  left: 0;
-  background-color: #FFF7F8; /* Matcher headerens baggrundsfarve */
+  top: 100%; /* Placering direkte under menuen */
+  left: 50%; /* Start ved midten af forælderens bredde */
+  transform: translateX(-50%); /* Flyt tilbage for at centrere dropdown-boksen */
+  background-color: #FFF7F8;
   border: 1px solid #000065;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   list-style-type: none;
-  padding: 10px 0; /* Tilføj padding for større dropdown */
-  width: 250px; /* Juster til ønsket bredde */
+  padding: 10px 0; /* Ens padding */
+  width: max-content; /* Tilpas bredde til indhold */
+  box-sizing: border-box;
+  text-align: center; /* Centrér teksten inde i dropdown-menuen */
 }
 
+/* Dropdown-menu punkter */
 nav ul li .dropdown li {
   padding: 10px 20px;
-  text-align: left; /* Venstrejuster tekst */
-  white-space: nowrap; /* Sørger for, at teksten ikke brydes */
+  white-space: nowrap; /* Sørg for ingen linjebrud */
 }
 
 nav ul li .dropdown li a {
   text-decoration: none;
-  color: #000065; /* Linkfarve */
-  font-size: 18px; /* Mindre tekst til undermenuer */
-  display: block; /* Gør hvert link til en blok for korrekt linjeafstand */
-  padding: 10px; /* Ens padding omkring teksten */
-  width: calc(100% - 20px); /* Trækker padding fra for at passe boksen til containeren */
-  box-sizing: border-box; /* Sørger for, at padding ikke påvirker bredden */
+  color: #000065;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  width: 100%; /* Gør linket til hele bredden af dropdown-boksen */
+  box-sizing: border-box;
+  text-align: center; /* Centrér teksten horisontalt */
 }
 
 nav ul li .dropdown li a:hover {
-  background-color: #000065; /* Baggrund ved hover */
-  color: #FFF7F8; /* Kontrastfarve */
-  border-radius: 5px; /* Tilføj lidt afrunding for en flot effekt */
+  background-color: #000065;
+  color: #FFF7F8;
+  border-radius: 5px;
 }
 
-/* Vis dropdown-menu ved hover */
+/* Vis dropdown ved hover */
 nav ul li:hover .dropdown {
-  display: block; /* Vis dropdown ved hover */
+  display: block; /* Vis dropdown-menuen */
 }
+
+
+/* Mobilvisning - specifikt for burgermenu */
+@media (max-width: 1400px) {
+  nav ul {
+    flex-direction: column; /* Vertikal menu for mobilvisning */
+    align-items: center; /* Centrér hele menuen horisontalt */
+  }
+
+  nav ul li {
+    position: sta; /* Sørg for, at dropdown ikke er påvirket af forælderens position */
+  }
+
+  nav ul li .dropdown {
+    position: fixed; /* Fast placering i forhold til hele viewporten */
+    top: 150px; /* Juster højden, så dropdown-menuen er under hovedmenuen - juster efter behov */
+    left: 50%; /* Start i midten af skærmens bredde */
+    transform: translateX(-50%); /* Flyt tilbage for at sikre, at dropdown-menuens midte er i midten af skærmen */
+    background-color: #FFF7F8;
+    border: 1px solid #000065;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style-type: none;
+    padding: 10px 0; /* Ens padding */
+    width: max-content; /* Tilpas bredde til indholdet */
+    box-sizing: border-box;
+    text-align: center; /* Centrér teksten inde i dropdown-menuen */
+  }
+}
+
+/* Dropdown-menu styling */
+nav ul li .dropdown {
+  display: none; /* Skjul dropdown som standard */
+}
+
+/* Vis dropdown ved hover eller klik */
+nav ul li:hover .dropdown,
+nav ul li:focus-within .dropdown {
+  display: block; /* Vis dropdown-menuen */
+}
+
+
+
 
 /* Burger-menu styling */
 .burger-menu {
@@ -122,16 +182,19 @@ nav ul li:hover .dropdown {
 }
 
 .burger-icon {
-  width: 40px; /* Standard burger-menu størrelse */
+  width: 40px;
   height: auto;
 }
 
 /* Responsiv styling */
 
 /* Tablet og mobil */
-@media (max-width: 1400px) { /* Ændret breakpoint */
-  header {
-    padding: 30px 20px 20px; /* Justerer padding for mindre skærme */
+@media (max-width: 1400px) {
+  nav ul li .dropdown {
+    position: static; /* Sørg for dropdown vises under hovedmenuen */
+    width: 100%; /* Gør dropdown-menuen bred nok i mobilvisningen */
+    transform: none; /* Fjern eventuelle forskydninger */
+    text-align: center; /* Centrér teksten for bedre visning */
   }
 
   .burger-menu {
@@ -140,14 +203,14 @@ nav ul li:hover .dropdown {
 
   /* Saml navigation */
   nav ul {
-    display: none; /* Skjul navigation som standard */
+    display: none; /* Skjul navigation */
     flex-direction: column;
     position: absolute;
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #FFF7F8; /* Ændret baggrundsfarve */
-    border-top: 2px solid #000065; /* Ændret farve */
+    background-color: #FFF7F8;
+    border-top: 2px solid #000065;
     z-index: 1000;
     padding: 0;
   }
@@ -156,49 +219,48 @@ nav ul li:hover .dropdown {
     display: flex; /* Vis navigation */
   }
 
-  nav ul.left.active, 
-  nav ul.right.active {
-    display: flex;
-    flex-direction: column; /* Lodret menu */
-  }
-
   nav ul li {
     text-align: center;
-    padding: 15px 0; /* Ens afstand mellem punkterne */
+    padding: 15px 0;
   }
 
   nav ul li .dropdown {
-    position: static; /* Undermenuer justeres til mobilvisning */
-    display: none;
+    position: static; /* Mobilvisning */
+    display: none; /* Skjul undermenu */
   }
 
   nav ul li.active .dropdown {
-    display: block; /* Vis undermenu på mobil */
+    display: block; /* Vis dropdown ved aktiv tilstand */
+    padding-left: 20px; /* Indrykning for undermenuer */
+  }
+
+  nav ul li:focus-within .dropdown {
+    display: block; /* Dropdown ved klik */
   }
 
   .logo {
     align-items: center;
-    margin: 0 auto; /* Sikrer centreret logo */
+    margin: 0 auto;
   }
 
   .logo-img {
-    max-height: 120px; /* Mindre logo på mindre skærme */
+    max-height: 120px;
   }
 }
 
 /* Laptop og desktop */
-@media (min-width: 1401px) { /* Ændret breakpoint */
+@media (min-width: 1401px) {
   nav ul {
-    display: flex; /* Gendan navigation */
-    gap: 2rem; /* Holder symmetrisk afstand */
+    display: flex;
+    gap: 2rem;
   }
 
   .burger-menu {
-    display: none; /* Skjul burger-menu */
+    display: none;
   }
 
   .logo {
-    align-items: flex-end; /* Justerer logoets bund til menupunkterne */
-    margin: 0 auto; /* Bevarer centreret logo */
+    align-items: flex-end;
+    margin: 0 auto;
   }
 }
