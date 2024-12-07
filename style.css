@@ -545,7 +545,7 @@ html, body {
 
 /* Bevar farven indenfor rammen */
 .outer-box {
-  background-color: #FFF7F8; /* Bevar baggrundsfarven i rammen */
+  background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
   max-width: 1400px; /* Begræns bredden på rammen */
   margin: 0 auto; /* Centrer rammen på siden */
   padding: 2rem; /* Indvendig afstand i rammen */
@@ -555,7 +555,7 @@ html, body {
 
 /* Headeren bevares som den er */
 header {
-  background-color: #FFF7F8; /* Sørg for, at headerens farve matcher */
+  background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
   border-bottom: 2px solid #000065; /* Behold headerens styling */
 }
 @media (max-width: 1460px) {
@@ -573,3 +573,4 @@ html, body {
   background-repeat: no-repeat; /* Undgå gentagelse af billedet */
   background-color: #ffffff; /* Baggrundsfarve som fallback */
 }
+
