@@ -350,36 +350,6 @@ h1, h2, h3 {
     text-decoration: none; /* Fjern understregning ved hover */
   }
   
-  .artist-list {
-    display: flex;
-    flex-direction: column; /* Kolonnevisning */
-    gap: 2rem; /* Afstand mellem kortene */
-    align-items: center; /* Centrer kortene */
-}
-
-.artist-card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Billeder og tekst justeres til venstre */
-    width: 100%;
-    max-width: 1300px; /* Større boksbredde */
-    border: 3px solid #000065; /* Ramme omkring hele kortet */
-    padding: 1.5rem; /* Mere indvendig plads */
-    background-color: #FFF7F8;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
-}
-
-.artist-card img {
-    width: 500px; /* Større billeder */
-    height: auto;
-    border: 2px solid #000065; /* Ramme omkring billedet */
-    margin-right: 1.5rem; /* Afstand til teksten */
-}
-
-.artist-info {
-    flex: 1; /* Fyld den resterende plads */
-    text-align: center; /* Juster tekst til venstre */
-}
 
 h1 {
     font-size: 2.5rem;
@@ -402,56 +372,3 @@ h1 {
   p {
     font-family: 'Times New Roman', Times, serif
   }
-.artist-info h2 {
-    font-size: 2rem; /* Større skriftstørrelse */
-    color: #FF7827;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-/* Responsiv styling */
-@media (max-width: 1460px) {
-    .artist-card {
-        max-width: 95%; /* Reducér bredden på kortene */
-        flex-direction: row; /* Bevar billede til venstre */
-    }
-    .artist-card img {
-        width: 500px; /* Standard billedstørrelse */
-        height: auto;
-    }
-    
-}
-
-/* Tablet breakpoint (op til 991px) */
-@media (max-width: 991px) {
-    .artist-card {
-        max-width: 95%; /* Juster boksbredde */
-    }
-    .artist-card img {
-        width: 350px; /* Gør billedet større på tablets */
-        height: auto; /* Bevar proportionerne */
-    }
-}
-
-/* Mobil breakpoint (op til 767px) */
-@media (max-width: 767px) {
-    .artist-card {
-        flex-direction: column; /* Skift layout til kolonne */
-        align-items: center; /* Centrer indholdet */
-        text-align: center; /* Juster teksten til midten */
-        padding: 1rem;
-    }
-
-    .artist-info {
-        order: -1; /* Flyt teksten over billedet */
-        margin-bottom: 1rem; /* Afstand mellem tekst og billede */
-    }
-
-    .artist-card img {
-        width: 250px; /* Gør billedet lidt større */
-        height: auto;
-        margin: 0; /* Fjern margin omkring billedet */
-    }
-}
