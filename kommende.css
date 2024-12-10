@@ -365,7 +365,7 @@ h1, h2, h3 {
     max-width: 1300px; /* Større boksbredde */
     border: 3px solid #000065; /* Ramme omkring hele kortet */
     padding: 1.5rem; /* Mere indvendig plads */
-    background-color: #FFF7F8;
+    background-color: #FFFFFF;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
 }
 
