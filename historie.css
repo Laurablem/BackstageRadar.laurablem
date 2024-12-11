@@ -406,21 +406,73 @@ h5 {color: #000065;
     font-size: 2.5rem
 }
 
-/* Responsiv styling */
+/* Standard layout */
+.text-image-container {
+    display: flex; /* Fleksibelt layout */
+    flex-direction: row; /* Tekst til venstre og billeder til højre */
+    align-items: flex-start; /* Tilpas billeder og tekst vertikalt */
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.text-content {
+    flex: 2;
+    max-width: 100%; /* Bevar tekstens breddebegrænsning */
+    text-align: left;
+    hyphens: auto;
+    word-break: break-word;
+    line-height: 1.6;
+    margin: 0; /* Bevar tekstens position */
+}
+
+/* Centrer kun billeder */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Lodret placering af billeder */
+    align-items: center; /* Centrer billeder horisontalt */
+    justify-content: center; /* Centrer billeder vertikalt */
+    margin: 0 auto; /* Sørg for centreret placering */
+    gap: 1.5rem; /* Afstand mellem billeder */
+    width: 100%; /* Sørg for, at containeren fylder */
+}
+
+.image-content {
+    align-items: center; /* Centrer billedet og teksten */
+    display: flex;
+    flex-direction: column; /* Sørg for, at billedet og billedteksten er lodret placeret */
+    text-align: center; /* Centrer billedteksten */
+    margin: 0 auto; /* Sørg for centreret placering */
+}
+
+.image-content img {
+    display: block; /* Sørg for korrekt billedopførsel */
+    max-width: 400px; /* Begræns billedets bredde */
+    width: 100%; /* Gør billedet responsivt */
+    height: auto; /* Bevar proportionerne */
+    border: 3px solid #000065; /* Tilføj ramme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tilføj skygge */
+    margin: 0 auto; /* Sørg for, at billedet er centreret */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Layoutændringer ved mindre skærme */
 @media (max-width: 991px) {
-    .inner-box {
-        padding: 1.5rem;
+    .text-image-container {
+        flex-direction: column; /* Skift layout til lodret */
+        align-items: center;
     }
 
-    .band-article h3 {
-        font-size: 1.6rem;
+    .image-container {
+        align-items: center; /* Centrer billeder på mindre skærme */
     }
 
-    .band-article p {
-        font-size: 1.1rem;
+    .image-content img {
+        margin: 0 auto; /* Centrer billedet på mindre skærme */
     }
 }
 
+/* Layout for mobil */
 @media (max-width: 767px) {
     .inner-box {
         padding: 1rem;
@@ -433,70 +485,13 @@ h5 {color: #000065;
     .band-article p {
         font-size: 1rem;
     }
-}
 
-.text-image-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.text-content {
-    flex: 2;
-    text-align: justify; /* Sørger for jævn tekstfordeling */
-}
-
-.image-container {
-    display: flex;
-    flex-direction: column; /* Stabl elementerne lodret */
-    align-items: center; /* Centrer billederne horisontalt */
-    gap: 2rem; /* Større afstand mellem billederne */
-}
-
-.image-content img {
-    width: 100%; /* Gør billederne responsivt */
-    max-width: 400px; /* Reducér billedernes størrelse */
-    height: auto; /* Bevar proportionerne */
-    border: 3px solid #000065; /* Ramme omkring billederne */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
-}
-
-.image-content figcaption {
-    text-align: center; /* Centrer billedteksten */
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.5rem; /* Afstand mellem billede og tekst */
-    font-style: italic;
-}
-
-
-/* Responsiv styling */
-@media (max-width: 991px) {
-    .text-image-container {
-        flex-direction: column; /* Skift layout til lodret */
-        align-items: center; /* Centrer elementer */
-    }
-
-    .text-content {
-        order: 2; /* Flyt tekstindhold til at komme efter billedet */
-    }
-
-    .image-content {
-        order: 1; /* Flyt billedindhold til at komme først */
-        margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
-    }
-}
-
-
-@media (max-width: 767px) {
     .text-content p {
         font-size: 1rem;
     }
 
     .image-content img {
-        max-width: 100%;
+        max-width: 100%; /* Gør billedet responsivt */
+        margin: 0 auto; /* Centrer billedet */
     }
 }
-
-

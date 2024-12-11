@@ -71,25 +71,24 @@
         </nav>
     </header>
 
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.getElementById('burger-btn');
             const leftNav = document.querySelector('.nav-links.left');
             const rightNav = document.querySelector('.nav-links.right');
-    
+
             // Kombinér venstre og højre navigation i mobilvisning
             burgerBtn.addEventListener('click', () => {
                 leftNav.classList.toggle('active');
                 rightNav.classList.toggle('active');
-    
+
                 if (leftNav.classList.contains('active')) {
                     // Tilføj kun de ønskede elementer fra højre navigation
                     rightNav.querySelectorAll('li').forEach(item => {
                         const linkText = item.querySelector('a').textContent.trim();
-    
+
                         // Fjern de specifikke elementer fra højre navigation
-                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', '#Brevkassen'].includes(linkText)) {
+                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', 'Brevkassen'].includes(linkText)) {
                             const clone = item.cloneNode(true);
                             leftNav.appendChild(clone);
                         }
@@ -104,11 +103,7 @@
                 }
             });
         });
-
-        
     </script>
-    
-
 
     <div class="outer-box">
         <main>
@@ -123,42 +118,40 @@
                                 <p>
                                     Siden 2013 har Radar været et centralt spillested for nyskabende musik og kultur i Aarhus. Beliggende på Godsbanen – byens kreative epicenter – er Radar omgivet af et unikt miljø, hvor kunst, design og musik mødes. Spillestedet er kendt for sin intime atmosfære og sin dedikation til at præsentere musik, der skubber grænser.
                                 </p>
-                                <h2>En Platform for Vækstlaget og Nichekunstnere</h2>
+                                <figure class="image-content radar-image">
+                                    <img src="images/radar2.jpg" alt="Radar på Godsbanen">
+                                
+                                </figure>
+
+                                <h2>En platform for vækstlaget og nichekunstnere</h2>
                                 <p>
-                                Radar har en særlig rolle i Aarhus som et springbræt for vækstlaget og nichekunstnere. De giver plads til upcoming bands og eksperimenterende projekter, der ofte overses på større scener. Mange kunstnere, der har startet deres rejse på Radars scene, er senere blevet etablerede navne i musikverdenen.
-                                Med hjælp fra et engageret team af frivillige skaber Radar en ramme, hvor musikere kan udfolde sig, og publikum kan opleve noget unikt. De frivilliges indsats er afgørende for at bevare spillestedets ånd og energi.
-                                </p>  
-                                <h2>Kulturel Motor i Aarhus</h2> 
-                                <p>
-                                Radar er mere end et spillested – det er en motor for kreativitet og innovation i Aarhus. Som en del af Godsbanen bidrager de til byens status som et kulturel centrum, hvor både lokale og internationale kunstnere kan mødes. Spillestedet tiltrækker et publikum, der søger musikalske oplevelser, der går ud over det sædvanlige.
+                                    Radar har en særlig rolle i Aarhus som et springbræt for vækstlaget og nichekunstnere. De giver plads til upcoming bands og eksperimenterende projekter, der ofte overses på større scener. Mange kunstnere, der har startet deres rejse på Radars scene, er senere blevet etablerede navne i musikverdenen. Med hjælp fra et engageret team af frivillige skaber Radar en ramme, hvor musikere kan udfolde sig, og publikum kan opleve noget unikt. De frivilliges indsats er afgørende for at bevare spillestedets ånd og energi.
                                 </p>
+
+                                <h2>Kulturel Motor i Aarhus</h2>
+                                <p>
+                                    Radar er mere end et spillested – det er en motor for kreativitet og innovation i Aarhus. Som en del af Godsbanen bidrager de til byens status som et kulturel centrum, hvor både lokale og internationale kunstnere kan mødes. Spillestedet tiltrækker et publikum, der søger musikalske oplevelser, der går ud over det sædvanlige.
+                                </p>
+                                <figure class="image-content calendar-image">
+                                    <img src="images/kalender.jpg" alt="Kalender">
+                                 
+                                </figure>
+
                                 <h2>Et Sted for Fremtiden</h2>
                                 <p>
-                                Med fokus på både musikalsk kvalitet og fællesskab fortsætter Radar med at være et samlingspunkt for Aarhus’ kreative miljø. Fra intime koncerter til store samarbejder spiller Radar en afgørende rolle i at forme byens musikalske fremtid.
-                                </p> 
+                                    Med fokus på både musikalsk kvalitet og fællesskab fortsætter Radar med at være et samlingspunkt for Aarhus’ kreative miljø. Fra intime koncerter til store samarbejder spiller Radar en afgørende rolle i at forme byens musikalske fremtid.
+                                </p>
                                 <h2>Vil du opleve Radar?</h2>
                                 <p>
-                                Tjek vores kommende events og bliv en del af det kreative fællesskab på Godsbanen.
+                                    Tjek vores kommende events og bliv en del af det kreative fællesskab på Godsbanen.
                                 </p>
                             </div>
-                            <div class="image-container">
-                                <figure class="image-content">
-                                    <img src="images/radar2.jpg" alt="radar på Godsbanen">
-                                    <figcaption>Radar på Godsbanen</figcaption>
-                                </figure>
-                                <figure class="image-content">
-                                    <img src="images/kalender.jpg" alt="kalender">
-                                    <figcaption>Radars program</figcaption>
-                                </figure>
-                            </div>                                                   
                         </div>
                     </article>
                 </section>
             </div>
-            
         </main>
     </div>
-
 
     <footer>
         <div class="social-icons">
@@ -177,5 +170,4 @@
         </div>
     </footer>
 </body>
-
 </html>

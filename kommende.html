@@ -89,7 +89,7 @@
                         const linkText = item.querySelector('a').textContent.trim();
     
                         // Fjern de specifikke elementer fra højre navigation
-                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', '#Brevkassen'].includes(linkText)) {
+                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', 'Brevkassen'].includes(linkText)) {
                             const clone = item.cloneNode(true);
                             leftNav.appendChild(clone);
                         }
