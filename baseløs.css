@@ -471,19 +471,20 @@ h6 {color: #FF7827;
 /* Responsiv styling */
 @media (max-width: 991px) {
     .text-image-container {
-        flex-direction: column; /* Skift til lodret layout */
-        align-items: center;
+        flex-direction: column; /* Skift layout til lodret */
+        align-items: center; /* Centrer elementer */
+    }
+
+    .text-content {
+        order: 2; /* Flyt tekstindhold til at komme efter billedet */
     }
 
     .image-content {
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    .image-content img {
-        max-width: 100%; /* Gør billedet responsivt */
+        order: 1; /* Flyt billedindhold til at komme først */
+        margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
     }
 }
+
 
 @media (max-width: 767px) {
     .text-content p {
@@ -492,5 +493,49 @@ h6 {color: #FF7827;
 
     .image-content img {
         max-width: 100%;
+    }
+}
+
+.infographic-container {
+    display: flex; /* Brug flexbox til at centrere billedet */
+    justify-content: center; /* Centrer horisontalt */
+    align-items: center; /* Centrer lodret */
+    margin: 2rem auto; /* Centrer containeren og tilføj margin over/under */
+    padding: 10px; /* Indvendig afstand */
+    text-align: center; /* Sørg for, at alt indhold inde i containeren er centreret */
+}
+
+.infographic {
+    max-width: 60%; /* Reducér billedets bredde til 60% af containerens bredde */
+    height: auto; /* Bevar proportionerne */
+    display: block; /* Fjern eventuelle mellemrum under billedet */
+}
+
+/* Laptop-version: Skærme mellem 992px og 1400px */
+@media (max-width: 1400px) and (min-width: 992px) {
+    .infographic {
+        max-width: 50%; /* Reducér billedet yderligere til 50% på laptops */
+    }
+}
+
+/* Responsiv styling for tablets */
+@media (max-width: 991px) {
+    .infographic-container {
+        padding: 8px; /* Mindre padding på tablets */
+    }
+
+    .infographic {
+        max-width: 70%; /* Reducér billedet til 70% af containerens bredde */
+    }
+}
+
+/* Responsiv styling for mobil */
+@media (max-width: 767px) {
+    .infographic-container {
+        padding: 5px; /* Mindre padding */
+    }
+
+    .infographic {
+        max-width: 80%; /* Reducér billedet til 80% af containerens bredde */
     }
 }
