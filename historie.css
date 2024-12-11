@@ -369,15 +369,16 @@ h1, h2, h3, h5{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
 }
 
-.band-article h3 {
+h3 {
     color: #FF7827;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: left;
+    margin-bottom: 5px;
  }
 
 
-.band-article p {
+.radar-article p {
     color: #000065;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -385,8 +386,15 @@ h1, h2, h3, h5{
     text-align: left;
 }
 
-h2 { color: #FF7827;
-margin-bottom: 30px;
+h2 {
+    color: #FF7827;
+    margin-bottom: 15px; /* Mindre afstand under <h2> */
+}
+
+p {
+    margin-top: 10px; /* Mindre afstand over <p> */
+    margin-bottom: 20px; /* Tilføj en passende afstand under <p> */
+    line-height: 1.6; /* Bevar en læsevenlig linjehøjde */
 }
 
 h1 {color: #000065;
@@ -397,12 +405,6 @@ h5 {color: #000065;
     text-align: center;
     font-size: 2.5rem
 }
-
-h6 {color: #FF7827;
-    text-align: left;
-}
-
-
 
 /* Responsiv styling */
 @media (max-width: 991px) {
@@ -445,28 +447,29 @@ h6 {color: #FF7827;
     text-align: justify; /* Sørger for jævn tekstfordeling */
 }
 
-.image-content {
-    flex: 1;
+.image-container {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrer billedet og billedteksten */
+    flex-direction: column; /* Stabl elementerne lodret */
+    align-items: center; /* Centrer billederne horisontalt */
+    gap: 2rem; /* Større afstand mellem billederne */
 }
 
 .image-content img {
-    width: 130%;
-    max-width: 500px;
-    height: auto;
-    border: 3px solid #000065;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Gør billederne responsivt */
+    max-width: 400px; /* Reducér billedernes størrelse */
+    height: auto; /* Bevar proportionerne */
+    border: 3px solid #000065; /* Ramme omkring billederne */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
 }
 
 .image-content figcaption {
-    text-align: center;
+    text-align: center; /* Centrer billedteksten */
     font-size: 0.9rem;
     color: #666;
-    margin-top: 0.5rem;
+    margin-top: 0.5rem; /* Afstand mellem billede og tekst */
     font-style: italic;
 }
+
 
 /* Responsiv styling */
 @media (max-width: 991px) {
@@ -496,46 +499,4 @@ h6 {color: #FF7827;
     }
 }
 
-.infographic-container {
-    display: flex; /* Brug flexbox til at centrere billedet */
-    justify-content: center; /* Centrer horisontalt */
-    align-items: center; /* Centrer lodret */
-    margin: 2rem auto; /* Centrer containeren og tilføj margin over/under */
-    padding: 10px; /* Indvendig afstand */
-    text-align: center; /* Sørg for, at alt indhold inde i containeren er centreret */
-}
 
-.infographic {
-    max-width: 60%; /* Reducér billedets bredde til 60% af containerens bredde */
-    height: auto; /* Bevar proportionerne */
-    display: block; /* Fjern eventuelle mellemrum under billedet */
-}
-
-/* Laptop-version: Skærme mellem 992px og 1400px */
-@media (max-width: 1400px) and (min-width: 992px) {
-    .infographic {
-        max-width: 50%; /* Reducér billedet yderligere til 50% på laptops */
-    }
-}
-
-/* Responsiv styling for tablets */
-@media (max-width: 991px) {
-    .infographic-container {
-        padding: 8px; /* Mindre padding på tablets */
-    }
-
-    .infographic {
-        max-width: 70%; /* Reducér billedet til 70% af containerens bredde */
-    }
-}
-
-/* Responsiv styling for mobil */
-@media (max-width: 767px) {
-    .infographic-container {
-        padding: 5px; /* Mindre padding */
-    }
-
-    .infographic {
-        max-width: 80%; /* Reducér billedet til 80% af containerens bredde */
-    }
-}
