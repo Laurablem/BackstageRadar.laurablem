@@ -119,13 +119,13 @@
                     så vi sammen kan sikre, at jeres ønsker bliver hørt, og at I får de bedste oplevelser på Radar.</p>
             </section>
            <div class="inner-box"> <!--w3shools:https://www.w3schools.com/html/html_form_input_types.asp#gsc.tab=0-->
-            <form action="/action_page.php onsubmit="showThankYouMessage()">
+            <form action="/action_page.php" onsubmit="showThankYouMessage(event)">
                 <label for="fname">NAVN:</label><br>
                 <input type="text" id="fname" name="fname" placeholder="..."><br>
                 <label for="lname">EMAIL:</label><br>
                 <input type="text" id="lname" name="lname" placeholder="..."><br><br>
                 <label for="lname">SKRIV DIT/DINE FORSLAG HER:</label><br>
-                <input type="text" id="forslag" name="forslag" placeholder="..."><br><br>
+                <textarea id="forslag" name="forslag" placeholder="..."></textarea><br><br>
                 <input type="submit" value="INDSEND">
                 <input type="reset" value="SLET">
               </form>
@@ -133,9 +133,8 @@
 
             <script>
                 function showThankYouMessage(event) {
-                  event.preventDefault(); // Forhindrer formularen i at sende data direkte
-                  alert("Tak for dit forslag!"); // Viser pop-up med tak-beskeden
-                  return false; // Forhindrer standardformularindsendelsen
+                  event.preventDefault(); // Forhindrer formularen i at blive sendt
+                  alert("Tak for dit forslag!"); // Viser pop-up-besked
                 }
               </script>
 

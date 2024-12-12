@@ -592,3 +592,15 @@ form {
     }
   }
   
+  textarea {
+    width: 100%; /* Gør det lige så bredt som andre inputfelter */
+    height: 150px; /* Øg højden */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Sørger for, at padding ikke påvirker størrelsen */
+    resize: vertical; /* Tillad brugeren at ændre højden (kan ændres til none) */
+    border: 1px solid #000065;
+  }
+  
