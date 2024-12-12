@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Backstage</title>
+    <link rel="stylesheet" href="brevkasse.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Venstre navigation -->
+            <ul class="nav-links left">
+                <li>
+                    <a href="#">KUSTNERE & EVENTS</a>
+                    <ul class="dropdown">
+                        <li><a href="kommende.html">Kommende Kunstnere</a></li>
+                        <li><a href="#Tidligere Kunstnere">Tidligere Kunstnere</a></li>
+                        <li><a href="#Kommende Events">Kommende Events</a></li>
+                        <li><a href="#Tidligere Events">Tidligere Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#fordele">FORDELE</a>
+                    <ul class="dropdown">
+                        <li><a href="#Bliv Medlem">Bliv Medlem</a></li>
+                        <li><a href="#pointsystem">Pointsystem</a></li>
+                        <li><a href="#Pre-sale">Pre-sale</a></li>
+                        <li><a href="#Konkurancer">Konkurancer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#webshop">WEBSHOP</a>
+                    <ul class="dropdown">
+                        <li><a href="#Merch">Merch</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="images/Logo.png" alt="Radar Backstage logo" class="logo-img"></a>
+            </div>
+
+            <!-- Højre navigation -->
+            <ul class="nav-links right">
+                <li><a href="#galleri">GALLERI</a></li>
+                <li>
+                    <a href="#om-radar">OM RADAR</a>
+                    <ul class="dropdown">
+                        <li><a href="#Radars Historie">Radars Historie</a></li>
+                        <li><a href="#Huset og de frivillige">Huset og de frivillige</a></li>
+                        <li><a href="#Baren">Baren</a></li>
+                        <li><a href="#Kontakt">Kontakt</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#profil">DIN PROFIL</a>
+                    <ul class="dropdown">
+                        <li><a href="#Brevkassen">Brevkassen</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Burger-menu -->
+            <div class="burger-menu">
+                <button id="burger-btn">
+                    <img src="images/burger.png" alt="Burger Menu" class="burger-icon">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerBtn = document.getElementById('burger-btn');
+            const leftNav = document.querySelector('.nav-links.left');
+            const rightNav = document.querySelector('.nav-links.right');
+    
+            // Kombinér venstre og højre navigation i mobilvisning
+            burgerBtn.addEventListener('click', () => {
+                leftNav.classList.toggle('active');
+                rightNav.classList.toggle('active');
+    
+                if (leftNav.classList.contains('active')) {
+                    // Tilføj kun de ønskede elementer fra højre navigation
+                    rightNav.querySelectorAll('li').forEach(item => {
+                        const linkText = item.querySelector('a').textContent.trim();
+    
+                        // Fjern de specifikke elementer fra højre navigation
+                        if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', 'Brevkassen'].includes(linkText)) {
+                            const clone = item.cloneNode(true);
+                            leftNav.appendChild(clone);
+                        }
+                    });
+                    rightNav.style.display = 'none';
+                } else {
+                    const originalLength = 3; // Antal originale elementer i venstre navigation
+                    while (leftNav.children.length > originalLength) {
+                        leftNav.removeChild(leftNav.lastChild);
+                    }
+                    rightNav.style.display = '';
+                }
+            });
+        });
+
+        
+    </script>
+    
+
+
+    <div class="outer-box">
+        <main>
+            <section class="welcome-section">
+                <h1>BREVKASSEN</h1>
+                <p>Her kan du dele dine forslag til kunstnere og events, som du gerne vil opleve på Radar. 
+                    Hver måned udvælger vi de tre bedste idéer og opretter en afstemning (lige under brevkassen), 
+                    så vi sammen kan sikre, at jeres ønsker bliver hørt, og at I får de bedste oplevelser på Radar.</p>
+            </section>
+           <div class="inner-box"> <!--w3shools:https://www.w3schools.com/html/html_form_input_types.asp#gsc.tab=0-->
+            <form action="/action_page.php onsubmit="showThankYouMessage()">
+                <label for="fname">NAVN:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="..."><br>
+                <label for="lname">EMAIL:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="..."><br><br>
+                <label for="lname">SKRIV DIT/DINE FORSLAG HER:</label><br>
+                <input type="text" id="forslag" name="forslag" placeholder="..."><br><br>
+                <input type="submit" value="INDSEND">
+                <input type="reset" value="SLET">
+              </form>
+            </div> 
+
+            <script>
+                function showThankYouMessage(event) {
+                  event.preventDefault(); // Forhindrer formularen i at sende data direkte
+                  alert("Tak for dit forslag!"); // Viser pop-up med tak-beskeden
+                  return false; // Forhindrer standardformularindsendelsen
+                }
+              </script>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://spotify.com" target="_blank" aria-label="Spotify">
+                <img src="images/spotify.png" alt="Spotify">
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://radarlive.dk/" target="_blank" aria-label="Radar">
+                <img src="images/radar.png" alt="Radar">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
