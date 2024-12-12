@@ -604,3 +604,18 @@ form {
     border: 1px solid #000065;
   }
   
+  .submit-button {
+    background-color: #000065; /* blå baggrund */
+    color: white; /* Hvid tekst */
+    padding: 10px 20px; /* Polstring for komfortabel størrelse */
+    font-size: 1rem; /* Standard tekststørrelse */
+    border: none; /* Fjern kant */
+    border-radius: 5px; /* Runde hjørner */
+    cursor: pointer; /* Ændrer cursoren til en hånd */
+    transition: background-color 0.3s ease; /* Glidende overgang ved hover */
+  }
+  
+  .submit-button:hover {
+    background-color: #FF7827; /* orange ved hover */
+  }
+  

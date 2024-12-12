@@ -129,7 +129,7 @@
                 <input type="submit" value="INDSEND">
                 <input type="reset" value="SLET">
               </form>
-            </div> 
+            
 
             <script>
                 function showThankYouMessage(event) {
@@ -138,6 +138,26 @@
                 }
               </script>
 
+            <section>
+            
+                <form onsubmit="handleFormSubmission(event)">
+                    <input type="checkbox" id="valgmulighed1" name="valgmulighed1" value="Q&A med Baseløs">
+                    <label for="valgmulighed1">Q&A med Baseløs</label><br>
+                    
+                    <input type="checkbox" id="valgmulighed2" name="valgmulighed2" value="Koncert med Freddie Lane">
+                    <label for="valgmulighed2">Koncert med Freddie Lane</label><br>
+                    
+                    <input type="checkbox" id="valgmulighed3" name="valgmulighed3" value="Talk med UNDERTEKST">
+                    <label for="valgmulighed3">Talk med UNDERTEKST</label><br><br>
+                    
+                    <button type="submit" class="submit-button">Indsend</button>
+                  </form>
+
+            </section>
+              
+
+              
+        </div> 
         </main>
     </div>
 
