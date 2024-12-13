@@ -575,7 +575,7 @@ form {
   }
   
   form input[type="reset"] {
-    background-color: #000650;
+    background-color: #000065;
     margin-left: 10px; /* Giver afstand mellem knapper */
   }
   
@@ -618,4 +618,5 @@ form {
   .submit-button:hover {
     background-color: #FF7827; /* orange ved hover */
   }
+  
   

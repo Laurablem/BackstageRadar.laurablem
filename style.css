@@ -338,7 +338,6 @@ p {
   text-align: center;
 }
 .highlight-box {
-  border: 5px solid #000065; /* Samme tykkelse og farve som rammen */
   border-radius: 8px; /* Behold afrundede hjørner, hvis ønsket */
   width: 300px; /* Justér størrelse efter behov */
   height: 300px; /* Justér størrelse efter behov */
@@ -511,3 +510,23 @@ a:hover {
   text-decoration: none; /* Fjern understregning ved hover */
 }
 
+.highlight-box a img {
+  transition: transform 0.3s ease, border 0.3s ease; /* Glidende overgang */
+  border: 5px solid #000065; /* Blå kant */
+}
+
+.highlight-box a img:hover {
+  transform: scale(1.05); /* Zoomer billedet ind */
+  border: 5px solid #FF7827; /* Ændrer kantfarve ved hover */
+}
+
+
+.highlight-item a h3 {
+  color: #000065; /* Standardfarve */
+  text-decoration: none; /* Fjerner standard understregning */
+  transition: color 0.3s ease; /* Glidende overgang ved farveskift */
+}
+
+.highlight-item a:hover h3 {
+  color: #FF7827; /* Farve ved hover */
+}

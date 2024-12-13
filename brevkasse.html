@@ -48,7 +48,7 @@
                 <li>
                     <a href="#om-radar">OM RADAR</a>
                     <ul class="dropdown">
-                        <li><a href="#Radars Historie">Radars Historie</a></li>
+                        <li><a href="historie.html">Radars Historie</a></li>
                         <li><a href="#Huset og de frivillige">Huset og de frivillige</a></li>
                         <li><a href="#Baren">Baren</a></li>
                         <li><a href="#Kontakt">Kontakt</a></li>
@@ -57,7 +57,7 @@
                 <li>
                     <a href="#profil">DIN PROFIL</a>
                     <ul class="dropdown">
-                        <li><a href="#Brevkassen">Brevkassen</a></li>
+                        <li><a href="brevkasse.html">Brevkassen</a></li>
                     </ul>
                 </li>
             </ul>
@@ -137,9 +137,19 @@
                   alert("Tak for dit forslag!"); // Viser pop-up-besked
                 }
               </script>
+            </div>
+
+
+     <section class="welcome-section">
+        <h1>MÅNEDENS AFSTEMNING</h1>
+         <p>Her kan du stemme på denne måneds tre bedste forslag fra brevkassen</p>
+    </section>
+
+     
+   
 
             <section>
-            
+                <div class="inner-box">
                 <form onsubmit="handleFormSubmission(event)">
                     <input type="checkbox" id="valgmulighed1" name="valgmulighed1" value="Q&A med Baseløs">
                     <label for="valgmulighed1">Q&A med Baseløs</label><br>
@@ -150,26 +160,32 @@
                     <input type="checkbox" id="valgmulighed3" name="valgmulighed3" value="Talk med UNDERTEKST">
                     <label for="valgmulighed3">Talk med UNDERTEKST</label><br><br>
                     
-                    <button type="submit" class="submit-button">Indsend</button>
+                    <button type="submit" class="submit-button">INDSEND</button>
                   </form>
-
+                </div>
             </section>
-              
 
-              
+            <script>
+                function handleFormSubmission(event) {
+                    event.preventDefault(); // Forhindrer, at formularen bliver sendt
+                    alert("Tak for dit svar! Formularen er indsendt."); // Viser en pop-up besked
+                    event.target.reset(); // Nulstiller formularen
+                }
+            </script>
+       
         </div> 
         </main>
-    </div>
+   
 
     <footer>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <a href="https://www.facebook.com/radarlive/" target="_blank" aria-label="Facebook">
                 <img src="images/facebook.png" alt="Facebook">
             </a>
             <a href="https://spotify.com" target="_blank" aria-label="Spotify">
                 <img src="images/spotify.png" alt="Spotify">
             </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/radarlive/" target="_blank" aria-label="Instagram">
                 <img src="images/instagram.png" alt="Instagram">
             </a>
             <a href="https://radarlive.dk/" target="_blank" aria-label="Radar">

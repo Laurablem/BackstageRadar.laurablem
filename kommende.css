@@ -455,3 +455,22 @@ h1 {
         margin: 0; /* Fjern margin omkring billedet */
     }
 }
+
+.artist-card a img {
+    transition: transform 0.3s ease, border 0.3s ease; /* Glidende overgang */
+  }
+  
+  .artist-card a img:hover {
+    transform: scale(1.05); /* Zoomer billedet ind */
+  }
+  
+  
+  .artist-info a h2 {
+    color: #FF7827; /* Standardfarve */
+    text-decoration: none; /* Fjerner standard understregning */
+    transition: color 0.3s ease; /* Glidende overgang ved farveskift */
+  }
+  
+  .artist-info a:hover h2 {
+    color: #000065; /* Farve ved hover */
+  }
