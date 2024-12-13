@@ -539,3 +539,7 @@ h6 {color: #FF7827;
         max-width: 80%; /* Reducér billedet til 80% af containerens bredde */
     }
 }
+
+body {
+    overflow-x: hidden;
+}

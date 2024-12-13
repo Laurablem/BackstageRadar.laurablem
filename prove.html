@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar Backstage</title>
-    <link rel="stylesheet" href="historie.css">
+    <link rel="stylesheet" href="prove.css">
 </head>
 <body>
     <header>
         <nav>
             <!-- Venstre navigation -->
             <ul class="nav-links left">
-                <li>
+                <li class="dropdown-container">
                     <a href="#">KUSTNERE & EVENTS</a>
                     <ul class="dropdown">
                         <li><a href="kommende.html">Kommende Kunstnere</a></li>
@@ -20,7 +20,7 @@
                         <li><a href="#Tidligere Events">Tidligere Events</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="dropdown-container">
                     <a href="#fordele">FORDELE</a>
                     <ul class="dropdown">
                         <li><a href="#Bliv Medlem">Bliv Medlem</a></li>
@@ -29,23 +29,23 @@
                         <li><a href="#Konkurrencer">Konkurrencer</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="dropdown-container">
                     <a href="#webshop">WEBSHOP</a>
                     <ul class="dropdown">
                         <li><a href="#Merch">Merch</a></li>
                     </ul>
                 </li>
             </ul>
-
+    
             <!-- Logo -->
             <div class="logo">
                 <a href="index.html"><img src="images/Logo.png" alt="Radar Backstage logo" class="logo-img"></a>
             </div>
-
+    
             <!-- Højre navigation -->
             <ul class="nav-links right">
                 <li><a href="#galleri">GALLERI</a></li>
-                <li>
+                <li class="dropdown-container">
                     <a href="#om-radar">OM RADAR</a>
                     <ul class="dropdown">
                         <li><a href="historie.html">Radars Historie</a></li>
@@ -54,14 +54,14 @@
                         <li><a href="#Kontakt">Kontakt</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="dropdown-container">
                     <a href="#profil">DIN PROFIL</a>
                     <ul class="dropdown">
                         <li><a href="brevkasse.html">Brevkassen</a></li>
                     </ul>
                 </li>
             </ul>
-
+    
             <!-- Burger-menu -->
             <div class="burger-menu">
                 <button id="burger-btn">
@@ -70,23 +70,26 @@
             </div>
         </nav>
     </header>
+    
+    
 
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.getElementById('burger-btn');
             const leftNav = document.querySelector('.nav-links.left');
             const rightNav = document.querySelector('.nav-links.right');
-
+    
             // Kombinér venstre og højre navigation i mobilvisning
             burgerBtn.addEventListener('click', () => {
                 leftNav.classList.toggle('active');
                 rightNav.classList.toggle('active');
-
+    
                 if (leftNav.classList.contains('active')) {
                     // Tilføj kun de ønskede elementer fra højre navigation
                     rightNav.querySelectorAll('li').forEach(item => {
                         const linkText = item.querySelector('a').textContent.trim();
-
+    
                         // Fjern de specifikke elementer fra højre navigation
                         if (!['Radars Historie', 'Huset og de frivillige', 'Baren', 'Kontakt', 'Brevkassen'].includes(linkText)) {
                             const clone = item.cloneNode(true);
@@ -103,56 +106,71 @@
                 }
             });
         });
+
+        
     </script>
 
-    <div class="outer-box">
-        <main>
-            <h5>RADAR'S HISTORIE</h5>
-            <div class="inner-box">
-                <section class="radar-article">
-                    <article>
-                        <h3>Radar: Musikalsk Centrum i Aarhus</h3>
-                        <div class="text-image-container">
-                            <div class="text-content">
-                                <h2>Et Kreativt Spillested på Godsbanen</h2>
-                                <p>
-                                    Siden 2013 har Radar været et centralt spillested for nyskabende musik og kultur i Aarhus. Beliggende på Godsbanen – byens kreative epicenter – er Radar omgivet af et unikt miljø, hvor kunst, design og musik mødes. Spillestedet er kendt for sin intime atmosfære og sin dedikation til at præsentere musik, der skubber grænser.
-                                </p>
-                                <figure class="image-content radar-image">
-                                    <img src="images/radar2.jpg" alt="Radar på Godsbanen">
-                                
-                                </figure>
-
-                                <h2>En platform for vækstlaget og nichekunstnere</h2>
-                                <p>
-                                    Radar har en særlig rolle i Aarhus som et springbræt for vækstlaget og nichekunstnere. De giver plads til upcoming bands og eksperimenterende projekter, der ofte overses på større scener. Mange kunstnere, der har startet deres rejse på Radars scene, er senere blevet etablerede navne i musikverdenen. Med hjælp fra et engageret team af frivillige skaber Radar en ramme, hvor musikere kan udfolde sig, og publikum kan opleve noget unikt. De frivilliges indsats er afgørende for at bevare spillestedets ånd og energi.
-                                </p>
-
-                                <h2>Kulturel Motor i Aarhus</h2>
-                                <p>
-                                    Radar er mere end et spillested – det er en motor for kreativitet og innovation i Aarhus. Som en del af Godsbanen bidrager de til byens status som et kulturel centrum, hvor både lokale og internationale kunstnere kan mødes. Spillestedet tiltrækker et publikum, der søger musikalske oplevelser, der går ud over det sædvanlige.
-                                </p>
-                                <figure class="image-content calendar-image">
-                                    <img src="images/kalender.jpg" alt="Kalender">
-                                 
-                                </figure>
-
-                                <h2>Et Sted for Fremtiden</h2>
-                                <p>
-                                    Med fokus på både musikalsk kvalitet og fællesskab fortsætter Radar med at være et samlingspunkt for Aarhus’ kreative miljø. Fra intime koncerter til store samarbejder spiller Radar en afgørende rolle i at forme byens musikalske fremtid.
-                                </p>
-                                <h2>Vil du opleve Radar?</h2>
-                                <p>
-                                    Tjek vores kommende events og bliv en del af det kreative fællesskab på Godsbanen.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </section>
+<div class="outer-box">
+    <main>
+        <section class="welcome-section">
+            <h1>VELKOMMEN TIL RADAR BACKSTAGE</h1>
+            <p>Her vil du kunne lære mere om Radar, vores kunstnere, events og vores historie. Kom med backstage til foråret 2025 på <a href="https://www.radarlive.dk" target="_blank" rel="noopener noreferrer">RADAR</a>.</p>
+        </section>
+        
+        <section class="highlights">
+            <h2>HIGHLIGHTS</h2>
+            <div class="highlight-boxes">
+                
+                <div class="highlight-item">
+                    <a href="brevkasse.html">
+                    <h3>BREVKASSE</h3>
+                    </a>
+                    <div class="highlight-box">
+                        <a href="historie.html">
+                            <img src="images/brevkasse2.jpg" alt="Brevkasse">
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="highlight-item">
+                    <a href="historie.html">
+                    <h3>RADAR'S HISTORIE</h3>
+                    </a>
+                    <div class="highlight-box">
+                        <a href="historie.html">
+                            <img src="images/radar2.jpg" alt="Radar's Historie">
+                        </a>
+                    </div>
+                </div>
+                
+        
+                <div class="highlight-item">
+                    <a href="kommende.html">
+                    <h3>FORÅRET 2025</h3>
+                    </a>
+                    <div class="highlight-box">
+                        <a href="kommende.html">
+                            <img src="images/kalender.jpg" alt="Foråret 2025">
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="highlight-item">
+                    <a href="kommende.html">
+                    <h3>KOMMENDE KUNSTNERE</h3>
+                    </a>
+                    <div class="highlight-box">
+                        <a href="kommende.html">
+                            <img src="images/forår2.jpg" alt="Kommende Kunstnere">
+                        </a>
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+        </section>
+    </main>
+</div>
 
+   
     <footer>
         <div class="social-icons">
             <a href="https://www.facebook.com/radarlive/" target="_blank" aria-label="Facebook">
@@ -170,4 +188,5 @@
         </div>
     </footer>
 </body>
+
 </html>

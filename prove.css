@@ -1,0 +1,628 @@
+
+h1, h2, h3 {
+    font-family: Arial Black, Gadget, sans-serif;
+    font-weight: bold
+  }
+  
+  body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Header styling */
+  header {
+    background-color: #FFF7F8; /* Baggrundsfarve */
+    padding: 30px 20px; /* Standard padding */
+    position: sticky; /* Sticky header */
+    top: 0; /* Start øverst */
+    z-index: 1000; /* Øverst i lag */
+    border-bottom: 2px solid #000065;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  }
+  /* Navigation styling */
+  nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+  }
+  /* Navigation: venstre og højre menuer */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; /* Afstand mellem menupunkterne */
+    flex: 1; /* Fordel pladsen ligeligt */
+  }
+  nav ul.left,
+  nav ul.right {
+    justify-content: space-between;
+  }
+  nav ul li {
+    text-align: center;
+    position: relative; /* Position for dropdown-menuer */
+  }
+  nav ul li a {
+    font-family: Arial Black, Gadget, sans-serif;
+    text-decoration: none;
+    color: #000065; /* Farve */
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  /* Logo styling */
+  .logo {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto; /* Centrer logoet */
+  }
+  .logo-img {
+    display: block;
+    max-height: 150px;
+    height: auto;
+  }
+  /* Navigation styling */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; /* Afstand mellem menupunkterne */
+    flex: 1; /* Fordel pladsen ligeligt */
+    justify-content: center; /* Centrér hele menuen horisontalt */
+  }
+ /* Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+    background-color: #FFF7F8; /* Baggrundsfarve */
+    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #000065;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+
+nav ul.left,
+nav ul.right {
+    justify-content: space-between;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.logo-img {
+    display: block;
+    max-height: 150px;
+    height: auto;
+}
+
+/* Dropdown-container styling */
+.dropdown-container {
+    position: relative;
+}
+
+/* Dropdown styling */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFF7F8;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    width: 200px;
+}
+
+/* Dropdown punkter */
+.dropdown li {
+    list-style: none;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    font-family: Arial Black, Gadget, sans-serif;
+    color: #000065;
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown li a:hover {
+    color: #FF7827;
+    transform: scale(1.1); /* Let zoom-effekt */
+}
+
+/* Glidende animation */
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+.dropdown-container:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    animation: slideDown 0.4s ease forwards;
+}
+
+/* Burger-menu styling */
+.burger-menu {
+    display: none; /* Skjult som standard for desktop */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.burger-icon {
+    width: 40px;
+    height: auto;
+}
+
+/* Mobilvisning (op til 990px) */
+@media (max-width: 990px) {
+    nav ul {
+        display: none; /* Skjult som standard */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #FFF7F8;
+        border-top: 2px solid #000065;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Vis menuen når aktiv */
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    nav ul li .dropdown {
+        position: static; /* Sørg for, at dropdown vises under menuen */
+        transform: none;
+        width: 100%; /* Udnyt hele bredden */
+        top: calc(100% + 5px);
+    }
+
+    nav ul li.active .dropdown {
+        display: block; /* Vis dropdown */
+        padding-left: 20px;
+    }
+
+    .burger-menu {
+        display: block; /* Vis burger-menu */
+    }
+
+    .logo {
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .logo-img {
+        max-height: 120px;
+    }
+}
+
+/* Tabletvisning (991px til 1460px) */
+@media (min-width: 991px) and (max-width: 1460px) {
+    nav ul {
+        display: none; /* Brug burger-menu */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #FFF7F8;
+        border-top: 2px solid #000065;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Vis menuen når aktiv */
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .burger-menu {
+        display: block; /* Vis burger-menu */
+    }
+
+    .logo {
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .logo-img {
+        max-height: 140px;
+    }
+}
+
+/* Desktopvisning (1461px og op) */
+@media (min-width: 1461px) {
+    .burger-menu {
+        display: none; /* Skjul burger-menu */
+    }
+
+    nav ul {
+        display: flex; /* Vis navigation som standard */
+        flex-direction: row; /* Vandret menu */
+    }
+
+    nav ul li .dropdown {
+        position: absolute; /* Dropdown vises som hover-menu */
+        transform: translateX(-50%);
+        top: calc(100% + 10px);
+        left: 50%;
+    }
+
+    nav ul li:hover .dropdown {
+        display: block; /* Vis dropdown ved hover */
+    }
+}
+
+  
+  /* Laptop og desktop */
+  @media (min-width: 1401px) {
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+    .burger-menu {
+      display: none;
+    }
+    .logo {
+      align-items: flex-end;
+      margin: 0 auto;
+    }
+  }
+  /* Footer styling */
+  footer {
+    background-color: #FFF7F8; 
+    padding: 20px 0;
+    text-align: center;
+    position: static; /* Altid i bunden */
+    bottom: 0;
+    width: 100%;
+  }
+  footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Afstand mellem ikoner */
+  }
+  footer .social-icons a {
+    display: inline-block;
+    width: 40px; /* Standard ikonstørrelse */
+    height: 40px;
+  }
+  footer .social-icons img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Breakpoints */
+  /* Mobil: op til 767px */
+  @media (max-width: 767px) {
+    footer .social-icons {
+      flex-direction: row; /* Vis ikoner i kolonne */
+      gap: 1.5rem; /* Lidt større afstand mellem ikoner */
+    }
+  }
+  /* Tablet: 768px til 1200px */
+  @media (min-width: 768px) and (max-width: 1200px) {
+    footer .social-icons {
+      flex-direction: row; /* Behold rækken */
+      gap: 2rem; /* Lidt større afstand mellem ikoner */
+    }
+  }
+  /* Laptop: 1201px og større */
+  @media (min-width: 1201px) {
+    footer .social-icons {
+      flex-direction: row; /* Ikoner på række */
+      gap: 2.5rem; /* Større afstand for brede skærme */
+    }
+  }
+  
+  /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Body styling */
+  body {
+    background-color: #FFF7F8;
+    color: #000065;
+    text-align: center;
+  }
+  /* Welcome Section */
+  .welcome-section {
+    padding: 30px 20px;
+  }
+  .welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000065;
+    font-weight: bold;
+  }
+  .welcome-section p {
+    font-weight: lighter;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: black
+  }
+
+  /* Container for highlights */
+  .highlight-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  /* Hver highlight-item */
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Teksten over boksen */
+  .highlight-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000065;
+    text-align: center;
+  }
+  .highlight-box {
+    border-radius: 8px; /* Behold afrundede hjørner, hvis ønsket */
+    width: 300px; /* Justér størrelse efter behov */
+    height: 300px; /* Justér størrelse efter behov */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Valgfri skygge for dybde */
+  }
+  
+  /* Billeder i boksene */
+  .highlight-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Sørg for, at billedet dækker boksen uden at påvirke boksens dimensioner */
+    object-position: center; /* Centrér billedet */
+  }
+  /* Responsiv styling */
+  /* Tablet: 768px til 1200px */
+  @media (max-width: 1200px) {
+    .highlight-box {
+      width: 200px; /* Justeret bredde for tablet */
+      height: 200px; /* Justeret højde for tablet */
+    }
+  }
+  /* Mobil: Op til 767px */
+  @media (max-width: 767px) {
+    .highlight-box {
+      width: 150px; /* Justeret bredde for mobil */
+      height: 150px; /* Justeret højde for mobil */
+    }
+    .highlight-item h3 {
+      font-size: 16px; /* Mindre tekststørrelse på mobil */
+    }
+  }
+  /* Laptop */
+  @media (min-width: 992px) {
+    .highlight-boxes {
+      justify-content: space-between;
+    }
+    .highlight-box {
+      width: 250px; /* Fast bredde for desktop */
+      height: 250px; /* Fast højde for desktop */
+    }
+    .welcome-section h1 {
+      font-size: 3rem;
+    }
+    .welcome-section p {
+      font-size: 1.4rem;
+    }
+    .highlights h2 {
+      font-size: 2.5rem;
+    }
+  }
+  /* Standard styling for desktop */
+  .highlight-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  /* Tablet breakpoint: To på hver række (2x2 layout) */
+  @media (max-width: 1460px) {
+    .highlight-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* To kolonner */
+      gap: 1rem; /* Justér afstand mellem boksene */
+      max-width: 600px; /* Begræns bredden for at samle boksene */
+      margin: 0 auto; /* Centrer containeren på siden */
+    }
+  }
+  
+  /* Mobil breakpoint: Stablet layout */
+  @media (max-width: 990px) {
+    .highlight-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem; /* Justér afstand */
+    }
+  }
+  /* Desktop breakpoint: Saml boksene på midten */
+  @media (min-width: 1461px) {
+    .highlight-boxes {
+      max-width: 1200px; /* Begræns bredden for at samle boksene */
+      margin: 0 auto; /* Centrer containeren på siden */
+      gap: 4rem; /* Justér afstand mellem boksene, hvis nødvendigt */
+      justify-content: center; /* Sørg for, at boksene centrerer inden for containeren */
+    }
+  }
+  section.highlights .highlight-box {
+    width: 300px !important; /* Tving ændringen igennem */
+    height: 300px !important; /* Tving ændringen igennem */
+  }
+  @media (min-width: 1461px) {
+    .highlight-boxes {
+      display: flex; /* Brug Flexbox til at arrangere boksene */
+      justify-content: center; /* Centrer alle boksene i containeren */
+      gap: 2rem; /* Behold det tidligere mellemrum mellem boksene */
+      flex-wrap: nowrap; /* Sørg for, at boksene forbliver på én linje */
+    }
+    .highlight-box {
+      flex: 0 0 auto; /* Sørg for, at boksene beholder deres egen størrelse */
+      width: 300px; /* Fast bredde tilpasset din forstørrelse */
+      height: 300px; /* Fast højde tilpasset din forstørrelse */
+    }
+  }
+  .highlights h2 {
+    margin-bottom: 2rem; /* Justér denne værdi for at øge afstanden */
+  }
+  .highlight-boxes {
+    padding-top: 1rem; /* Tilføj ekstra afstand, hvis nødvendigt */
+  }
+  .outer-box {
+    max-width: 1400px; /* Bredden på rammen */
+    margin: 0 auto; /* Centrer rammen */
+    padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
+    border: 5px solid #000065; /* Rammens farve og tykkelse */
+    background-color: #FFF7F8; /* Baggrundsfarve */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skygge for dybde */
+  }
+  header {
+    margin-bottom: 2rem; /* Justér afstanden mellem headeren og resten af indholdet */
+  }
+  footer {
+    margin-top: 2rem; /* Afstand mellem rammen og footeren */
+    background-color: #FFF7F8; /* Match baggrundsfarve */
+    padding: 2rem; /* Tilføj indvendig afstand */
+    text-align: center;
+    border-top: 2px solid #000065; /* Giv footeren en separat topkant */
+  }
+  /* Gør baggrunden uden for rammen hvid */
+  html, body {
+    background-color: #FFFFFF; /* Hvid baggrund uden for rammen */
+    margin: 0; /* Fjern standard marginer */
+    padding: 0; /* Fjern standard padding */
+  }
+  /* Bevar farven indenfor rammen */
+  .outer-box {
+    background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
+    max-width: 1400px; /* Begræns bredden på rammen */
+    margin: 0 auto; /* Centrer rammen på siden */
+    padding: 2rem; /* Indvendig afstand i rammen */
+    border: 5px solid #000065; /* Tyk ramme */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Let skygge for dybde */
+  }
+  /* Headeren bevares som den er */
+  header {
+    background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
+    border-bottom: 2px solid #000065; /* Behold headerens styling */
+  }
+  @media (max-width: 1460px) {
+    .outer-box {
+        max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
+        margin: 0 auto; /* Centrer rammen på siden */
+    }
+  }
+  
+  html, body {
+    background-image: url(images/klap.jpg); /* Sti til dit billede */
+    background-size: cover; /* Billedet dækker hele baggrunden */
+    background-position: center; /* Billedet centreres */
+    background-repeat: no-repeat; /* Undgå gentagelse af billedet */
+    background-color: #ffffff; /* Baggrundsfarve som fallback */
+  }
+
+  
+  a {
+    color: #000065; /* Linkets farve */
+    text-decoration: none; /* Fjern understregning ved hover */
+  }
+  
+  a:hover {
+    color: #FF7827; /* Farveændring, når musen holdes over linket */
+    text-decoration: none; /* Fjern understregning ved hover */
+  }
+  
+  .highlight-box a img {
+    transition: transform 0.3s ease, border 0.3s ease; /* Glidende overgang */
+    border: 5px solid #000065; /* Blå kant */
+  }
+  
+  .highlight-box a img:hover {
+    transform: scale(1.05); /* Zoomer billedet ind */
+    border: 5px solid #FF7827; /* Ændrer kantfarve ved hover */
+  }
+  
+  
+  .highlight-item a h3 {
+    color: #000065; /* Standardfarve */
+    text-decoration: none; /* Fjerner standard understregning */
+    transition: color 0.3s ease; /* Glidende overgang ved farveskift */
+  }
+  
+  .highlight-item a:hover h3 {
+    color: #FF7827; /* Farve ved hover */
+  }
+  

@@ -287,7 +287,7 @@ h1, h2, h3 {
 
 
   .outer-box {
-    max-width: 1400px; /* Bredden på rammen */
+    max-width: 14px; /* Bredden på rammen */
     margin: 0 auto; /* Centrer rammen */
     padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
     border: 5px solid #000065; /* Rammens farve og tykkelse */
@@ -474,3 +474,7 @@ h1 {
   .artist-info a:hover h2 {
     color: #000065; /* Farve ved hover */
   }
+
+  body {
+    overflow-x: hidden;
+}
