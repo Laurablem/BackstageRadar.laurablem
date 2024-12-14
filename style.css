@@ -1,37 +1,34 @@
-
 h1, h2, h3 {
   font-family: Arial Black, Gadget, sans-serif;
-  font-weight: bold
+  font-weight: bold;
 }
-
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Header styling */
+/* Styling af min header */
 header {
-  background-color: #FFF7F8; /* Baggrundsfarve */
-  padding: 30px 20px; /* Standard padding */
-  position: sticky; /* Sticky header */
-  top: 0; /* Start øverst */
-  z-index: 1000; /* Øverst i lag */
+  background-color: #FFF7F8;
+  padding: 30px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom: 2px solid #000065;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/* Navigation styling */
+/* Styling af min navigation */
 nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   position: relative;
 }
-/* Navigation: venstre og højre menuer */
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 2rem; /* Afstand mellem menupunkterne */
-  flex: 1; /* Fordel pladsen ligeligt */
+  gap: 2rem;
+  flex: 1;
 }
 nav ul.left,
 nav ul.right {
@@ -39,119 +36,85 @@ nav ul.right {
 }
 nav ul li {
   text-align: center;
-  position: relative; /* Position for dropdown-menuer */
+  position: relative;
 }
 nav ul li a {
   font-family: Arial Black, Gadget, sans-serif;
   text-decoration: none;
-  color: #000065; /* Farve */
+  color: #000065;
   font-weight: bold;
   font-size: 18px;
   padding: 10px 20px;
 }
-/* Logo styling */
+/* Styling af mit logo */
 .logo {
   display: flex;
   align-items: flex-end;
-  margin: 0 auto; /* Centrer logoet */
+  margin: 0 auto; 
 }
 .logo-img {
   display: block;
   max-height: 150px;
   height: auto;
+  transition: transform 0.3s ease; /* Dette er med til at give det en glidende effekt når man hover over logoet*/
 }
-/* Navigation styling */
+/* Hover-effekt på logoet */
+.logo:hover .logo-img {
+  transform: scale(1.1);
+}
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 2rem; /* Afstand mellem menupunkterne */
-  flex: 1; /* Fordel pladsen ligeligt */
-  justify-content: center; /* Centrér hele menuen horisontalt */
+  gap: 2rem; 
+  flex: 1; 
+  justify-content: center; 
 }
-/* Dropdown-menu styling */
-nav ul li {
-  position: relative; /* Sørg for, at dropdown er placeret i forhold til forælderen */
+/* Styling af dropdown-menuen ved Desktop-breakpointen*/
+@media (min-width: 1401px) {
+  nav ul li .dropdown {
+      display: block; 
+      position: absolute;
+      top: calc(100% + 10px); /* Sørger for at den er under menuen */
+      left: 50%; 
+      transform: translateX(-50%);
+      background: #FFF7F8;
+      padding: 0; 
+      border-radius: 8px; /* Giver boxen runde hjørner */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+      z-index: 1000;
+      max-height: 0; 
+      overflow: hidden; 
+      transition: max-height 0.3s ease, padding 0.3s ease; 
+  }
+  nav ul li:hover .dropdown,
+  nav ul li:focus-within .dropdown {
+      max-height: 300px; 
+      padding: 10px 0; 
+  }
+  .burger-menu {
+      display: none; /* Dette skjul burger-menuen på desktop */
+  }
 }
-nav ul li .dropdown {
-  display: none; /* Skjul dropdown som standard */
-  position: absolute;
-  top: 100%; /* Placering direkte under menuen */
-  left: 50%; /* Start ved midten af forælderens bredde */
-  transform: translateX(-50%); /* Flyt tilbage for at centrere dropdown-boksen */
-  background-color: #FFF7F8;
-  border: 1px solid #000065;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  list-style-type: none;
-  padding: 10px 0; /* Ens padding */
-  width: max-content; /* Tilpas bredde til indhold */
-  box-sizing: border-box;
-  text-align: center; /* Centrér teksten inde i dropdown-menuen */
-}
-/* Dropdown-menu punkter */
+/*Mine dropdown-menu punkter */
 nav ul li .dropdown li {
   padding: 10px 20px;
-  white-space: nowrap; /* Sørg for ingen linjebrud */
+  white-space: nowrap; /* For at undgå linjeskift */
 }
 nav ul li .dropdown li a {
   text-decoration: none;
   color: #000065;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
   padding: 10px;
-  width: 100%; /* Gør linket til hele bredden af dropdown-boksen */
-  box-sizing: border-box;
-  text-align: center; /* Centrér teksten horisontalt */
+  text-align: center; 
+  transition: color 0.3s ease, transform 0.3s ease; 
 }
 nav ul li .dropdown li a:hover {
-  background-color: #000065;
-  color: #FFF7F8;
-  border-radius: 5px;
+  color: #FF7827; 
+  transform: scale(1.1); 
 }
-/* Vis dropdown ved hover */
-nav ul li:hover .dropdown {
-  display: block; /* Vis dropdown-menuen */
-}
-
-/* Mobilvisning - specifikt for burgermenu */
-@media (max-width: 1400px) {
-  nav ul {
-    flex-direction: column; /* Vertikal menu for mobilvisning */
-    align-items: center; /* Centrér hele menuen horisontalt */
-  }
-  nav ul li {
-    position: sta; /* Sørg for, at dropdown ikke er påvirket af forælderens position */
-  }
-  nav ul li .dropdown {
-    position: fixed; /* Fast placering i forhold til hele viewporten */
-    top: 150px; /* Juster højden, så dropdown-menuen er under hovedmenuen - juster efter behov */
-    left: 50%; /* Start i midten af skærmens bredde */
-    transform: translateX(-50%); /* Flyt tilbage for at sikre, at dropdown-menuens midte er i midten af skærmen */
-    background-color: #FFF7F8;
-    border: 1px solid #000065;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    list-style-type: none;
-    padding: 10px 0; /* Ens padding */
-    width: max-content; /* Tilpas bredde til indholdet */
-    box-sizing: border-box;
-    text-align: center; /* Centrér teksten inde i dropdown-menuen */
-  }
-}
-/* Dropdown-menu styling */
-nav ul li .dropdown {
-  display: none; /* Skjul dropdown som standard */
-}
-/* Vis dropdown ved hover eller klik */
-nav ul li:hover .dropdown,
-nav ul li:focus-within .dropdown {
-  display: block; /* Vis dropdown-menuen */
-}
-
-
-
-/* Burger-menu styling */
-.burger-menu {
+ /* Stylingen af min burger-menu */
+ .burger-menu {
   display: none;
   position: absolute;
   left: 20px;
@@ -168,49 +131,60 @@ nav ul li:focus-within .dropdown {
   width: 40px;
   height: auto;
 }
-/* Responsiv styling */
-/* Tablet og mobil */
+/* Den responsive styling til tablet of mobil */
 @media (max-width: 1400px) {
   nav ul li .dropdown {
-    position: static; /* Sørg for dropdown vises under hovedmenuen */
-    width: 100%; /* Gør dropdown-menuen bred nok i mobilvisningen */
-    transform: none; /* Fjern eventuelle forskydninger */
-    text-align: center; /* Centrér teksten for bedre visning */
+    position: static; 
+    width: 100%; 
+    transform: none; 
+    text-align: center; 
   }
   .burger-menu {
-    display: block; /* Vis burger-menu */
+    display: block; 
   }
-  /* Saml navigation */
-  nav ul {
-    display: none; /* Skjul navigation */
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #FFF7F8;
-    border-top: 2px solid #000065;
-    z-index: 1000;
-    padding: 0;
-  }
-  nav ul.active {
-    display: flex; /* Vis navigation */
-  }
-  nav ul li {
-    text-align: center;
-    padding: 15px 0;
-  }
-  nav ul li .dropdown {
-    position: static; /* Mobilvisning */
-    display: none; /* Skjul undermenu */
-  }
-  nav ul li.active .dropdown {
-    display: block; /* Vis dropdown ved aktiv tilstand */
-    padding-left: 20px; /* Indrykning for undermenuer */
-  }
-  nav ul li:focus-within .dropdown {
-    display: block; /* Dropdown ved klik */
-  }
+/* Samlet navigation */
+nav ul {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  top: 80px; 
+  left: 0;
+  width: 100%;
+  background-color: #FFF7F8;
+  z-index: 1000;
+  padding: 0;
+  border: 2px solid #000065; 
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+nav ul.active {
+  display: flex; 
+}
+nav ul li {
+  position: relative; 
+  text-align: center;
+  padding: 15px 0;
+}
+nav ul li .dropdown {
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: auto; 
+  background-color: #FFF7F8; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  display: none; 
+  z-index: 1000; 
+}
+/* Når li er aktiv eller fokuseret */
+nav ul li:hover .dropdown,
+nav ul li:focus-within .dropdown,
+nav ul li.active .dropdown {
+  display: block; 
+}
   .logo {
     align-items: center;
     margin: 0 auto;
@@ -233,12 +207,12 @@ nav ul li:focus-within .dropdown {
     margin: 0 auto;
   }
 }
-/* Footer styling */
+/* Styling til min footer */
 footer {
   background-color: #FFF7F8; 
   padding: 20px 0;
   text-align: center;
-  position: static; /* Altid i bunden */
+  position: static;
   bottom: 0;
   width: 100%;
 }
@@ -246,57 +220,52 @@ footer .social-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; /* Afstand mellem ikoner */
+  gap: 1rem; 
 }
 footer .social-icons a {
   display: inline-block;
-  width: 40px; /* Standard ikonstørrelse */
+  width: 40px;
   height: 40px;
+  transition: transform 0.3s ease;
 }
 footer .social-icons img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease;
 }
-/* Breakpoints */
-/* Mobil: op til 767px */
+/* Samme hover-effekt, der forstøre ikonet */
+footer .social-icons a:hover {
+  transform: scale(1.2); 
+}
+/* Breakpoint styling til mobil op til 767px */
 @media (max-width: 767px) {
   footer .social-icons {
-    flex-direction: row; /* Vis ikoner i kolonne */
-    gap: 1.5rem; /* Lidt større afstand mellem ikoner */
+    flex-direction: row; 
+    gap: 1.5rem; 
   }
 }
-/* Tablet: 768px til 1200px */
+/* Breakpoint styling til tablet fra 768px til 1200px */
 @media (min-width: 768px) and (max-width: 1200px) {
   footer .social-icons {
-    flex-direction: row; /* Behold rækken */
-    gap: 2rem; /* Lidt større afstand mellem ikoner */
+    flex-direction: row; 
+    gap: 2rem; 
   }
 }
-/* Laptop: 1201px og større */
+/* Laptop breakpointen fra 1201px og større */
 @media (min-width: 1201px) {
   footer .social-icons {
-    flex-direction: row; /* Ikoner på række */
-    gap: 2.5rem; /* Større afstand for brede skærme */
+    flex-direction: row; 
+    gap: 2.5rem; 
   }
 }
-
-
-
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Body styling */
+/* Styling til body'en*/
 body {
   background-color: #FFF7F8;
   color: #000065;
   text-align: center;
 }
-/* Welcome Section */
+/* Styling til "Welcome" sektionen*/
 .welcome-section {
   padding: 30px 20px;
 }
@@ -314,22 +283,22 @@ body {
   color: black
 }
 p {
-  font-family: 'Times New Roman', Times, serif
+  font-family: Arial Black;
 }
-/* Container for highlights */
+/* Box til hightlihhts */
 .highlight-boxes {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
-/* Hver highlight-item */
+/* Hver highlight */
 .highlight-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* Teksten over boksen */
+/* Teksten over highlightboksen */
 .highlight-item h3 {
   margin-bottom: 0.5rem;
   font-size: 18px;
@@ -338,45 +307,43 @@ p {
   text-align: center;
 }
 .highlight-box {
-  border-radius: 8px; /* Behold afrundede hjørner, hvis ønsket */
-  width: 300px; /* Justér størrelse efter behov */
-  height: 300px; /* Justér størrelse efter behov */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Valgfri skygge for dybde */
+  border-radius: 8px; 
+  width: 300px; 
+  height: 300px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
-
 /* Billeder i boksene */
 .highlight-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Sørg for, at billedet dækker boksen uden at påvirke boksens dimensioner */
-  object-position: center; /* Centrér billedet */
+  object-fit: cover; 
+  object-position: center; 
 }
-/* Responsiv styling */
-/* Tablet: 768px til 1200px */
+/* Responsiv styling til tablet fra 768px til 1200 */
 @media (max-width: 1200px) {
   .highlight-box {
-    width: 200px; /* Justeret bredde for tablet */
-    height: 200px; /* Justeret højde for tablet */
+    width: 200px; 
+    height: 200px; 
   }
 }
-/* Mobil: Op til 767px */
+/* Mobil Op til 767px */
 @media (max-width: 767px) {
   .highlight-box {
-    width: 150px; /* Justeret bredde for mobil */
-    height: 150px; /* Justeret højde for mobil */
+    width: 150px; 
+    height: 150px; 
   }
   .highlight-item h3 {
-    font-size: 16px; /* Mindre tekststørrelse på mobil */
+    font-size: 16px; 
   }
 }
-/* Laptop */
+/* Til laptop/desktop */
 @media (min-width: 992px) {
   .highlight-boxes {
     justify-content: space-between;
   }
   .highlight-box {
-    width: 250px; /* Fast bredde for desktop */
-    height: 250px; /* Fast højde for desktop */
+    width: 250px; 
+    height: 250px; 
   }
   .welcome-section h1 {
     font-size: 3rem;
@@ -388,145 +355,135 @@ p {
     font-size: 2.5rem;
   }
 }
-/* Standard styling for desktop */
+/* Standard styling til desktop breakpoint*/
 .highlight-boxes {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
 }
-/* Tablet breakpoint: To på hver række (2x2 layout) */
+/* Tablet breakpoint */
 @media (max-width: 1460px) {
   .highlight-boxes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* To kolonner */
-    gap: 1rem; /* Justér afstand mellem boksene */
-    max-width: 600px; /* Begræns bredden for at samle boksene */
-    margin: 0 auto; /* Centrer containeren på siden */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    max-width: 600px; 
+    margin: 0 auto; 
   }
 }
-
-/* Mobil breakpoint: Stablet layout */
+/* Mobil breakpoint */
 @media (max-width: 990px) {
   .highlight-boxes {
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Justér afstand */
+    gap: 1rem; 
   }
 }
-/* Desktop breakpoint: Saml boksene på midten */
+/* Desktop breakpoint: her samler jeg boksene på midten */
 @media (min-width: 1461px) {
   .highlight-boxes {
-    max-width: 1200px; /* Begræns bredden for at samle boksene */
-    margin: 0 auto; /* Centrer containeren på siden */
-    gap: 4rem; /* Justér afstand mellem boksene, hvis nødvendigt */
-    justify-content: center; /* Sørg for, at boksene centrerer inden for containeren */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    gap: 4rem; 
+    justify-content: center; 
   }
 }
 section.highlights .highlight-box {
-  width: 300px !important; /* Tving ændringen igennem */
-  height: 300px !important; /* Tving ændringen igennem */
+  width: 300px !important; /* for at tvinge ændringen igennem */
+  height: 300px !important; /* samme her */
 }
 @media (min-width: 1461px) {
   .highlight-boxes {
-    display: flex; /* Brug Flexbox til at arrangere boksene */
-    justify-content: center; /* Centrer alle boksene i containeren */
-    gap: 2rem; /* Behold det tidligere mellemrum mellem boksene */
-    flex-wrap: nowrap; /* Sørg for, at boksene forbliver på én linje */
+    display: flex; 
+    justify-content: center; 
+    gap: 2rem; 
+    flex-wrap: nowrap; 
   }
   .highlight-box {
-    flex: 0 0 auto; /* Sørg for, at boksene beholder deres egen størrelse */
-    width: 300px; /* Fast bredde tilpasset din forstørrelse */
-    height: 300px; /* Fast højde tilpasset din forstørrelse */
+    flex: 0 0 auto; 
+    width: 300px; 
+    height: 300px; 
   }
 }
 .highlights h2 {
-  margin-bottom: 2rem; /* Justér denne værdi for at øge afstanden */
+  margin-bottom: 2rem; 
 }
 .highlight-boxes {
-  padding-top: 1rem; /* Tilføj ekstra afstand, hvis nødvendigt */
+  padding-top: 1rem; 
 }
 .outer-box {
-  max-width: 1400px; /* Bredden på rammen */
-  margin: 0 auto; /* Centrer rammen */
-  padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
-  border: 5px solid #000065; /* Rammens farve og tykkelse */
-  background-color: #FFF7F8; /* Baggrundsfarve */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skygge for dybde */
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 2rem; 
+  border: 5px solid #000065; 
+  background-color: #FFF7F8; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 header {
-  margin-bottom: 2rem; /* Justér afstanden mellem headeren og resten af indholdet */
+  margin-bottom: 2rem; 
 }
 footer {
-  margin-top: 2rem; /* Afstand mellem rammen og footeren */
-  background-color: #FFF7F8; /* Match baggrundsfarve */
-  padding: 2rem; /* Tilføj indvendig afstand */
+  margin-top: 2rem; 
+  background-color: #FFF7F8; 
+  padding: 2rem; 
   text-align: center;
-  border-top: 2px solid #000065; /* Giv footeren en separat topkant */
+  border-top: 2px solid #000065; 
 }
 /* Gør baggrunden uden for rammen hvid */
 html, body {
-  background-color: #FFFFFF; /* Hvid baggrund uden for rammen */
-  margin: 0; /* Fjern standard marginer */
-  padding: 0; /* Fjern standard padding */
+  background-color: #FFFFFF; 
+  margin: 0; 
+  padding: 0; 
 }
 /* Bevar farven indenfor rammen */
 .outer-box {
-  background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
-  max-width: 1400px; /* Begræns bredden på rammen */
-  margin: 0 auto; /* Centrer rammen på siden */
-  padding: 2rem; /* Indvendig afstand i rammen */
-  border: 5px solid #000065; /* Tyk ramme */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Let skygge for dybde */
+  background-color: #fef7f8; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 2rem; 
+  border: 5px solid #000065; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 /* Headeren bevares som den er */
 header {
-  background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
-  border-bottom: 2px solid #000065; /* Behold headerens styling */
+  background-color: #fef7f8; 
+  border-bottom: 2px solid #000065; 
 }
 @media (max-width: 1460px) {
   .outer-box {
-      max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
-      margin: 0 auto; /* Centrer rammen på siden */
+      max-width: 90%; 
+      margin: 0 auto; 
   }
 }
-
 html, body {
-  background-image: url(images/klap.jpg); /* Sti til dit billede */
-  background-size: cover; /* Billedet dækker hele baggrunden */
-  background-position: center; /* Billedet centreres */
-  background-repeat: no-repeat; /* Undgå gentagelse af billedet */
-  background-color: #ffffff; /* Baggrundsfarve som fallback */
+  background-image: url(images/klap.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-color: #ffffff; 
 }
-
-
 a {
-  color: #000065; /* Linkets farve */
-  text-decoration: none; /* Fjern understregning ved hover */
+  color: #000065; 
+  text-decoration: none; 
 }
-
 a:hover {
-  color: #FF7827; /* Farveændring, når musen holdes over linket */
-  text-decoration: none; /* Fjern understregning ved hover */
+  color: #FF7827; 
+  text-decoration: none; 
 }
-
 .highlight-box a img {
-  transition: transform 0.3s ease, border 0.3s ease; /* Glidende overgang */
-  border: 5px solid #000065; /* Blå kant */
+  transition: transform 0.3s ease, border 0.3s ease; 
+  border: 5px solid #000065; 
 }
-
 .highlight-box a img:hover {
-  transform: scale(1.05); /* Zoomer billedet ind */
-  border: 5px solid #FF7827; /* Ændrer kantfarve ved hover */
+  transform: scale(1.05); 
+  border: 5px solid #FF7827; 
 }
-
-
 .highlight-item a h3 {
-  color: #000065; /* Standardfarve */
-  text-decoration: none; /* Fjerner standard understregning */
-  transition: color 0.3s ease; /* Glidende overgang ved farveskift */
+  color: #000065; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
 }
-
 .highlight-item a:hover h3 {
-  color: #FF7827; /* Farve ved hover */
+  color: #FF7827; 
 }
