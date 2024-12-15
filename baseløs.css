@@ -530,3 +530,6 @@ h6 {
 body {
     overflow-x: hidden;
 }
+.no-border {
+  border: none;
+}
