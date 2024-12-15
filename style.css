@@ -9,10 +9,11 @@ body, h1, h2, p, ul, li {
   box-sizing: border-box;
 }
 /* Styling af min header */
+/*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
 header {
   background-color: #FFF7F8;
   padding: 30px 20px;
-  position: sticky;
+  position: sticky; /* sikre at min header følger med når man skroller, så man altid kan komme videre/væk unden problemer */
   top: 0;
   z-index: 1000;
   border-bottom: 2px solid #000065;
@@ -71,6 +72,7 @@ nav ul {
   justify-content: center; 
 }
 /* Styling af dropdown-menuen ved Desktop-breakpointen*/
+/* https://www.freecodecamp.org/news/breakpoints-for-responsive-web-design/*/
 @media (min-width: 1401px) {
   nav ul li .dropdown {
       display: block; 
@@ -144,6 +146,7 @@ nav ul li .dropdown li a:hover {
     display: block; 
   }
 /* Samlet navigation */
+/* https://chatgpt.com/share/675e3ccf-bb3c-8007-a54f-304a85b59a97*/
 nav ul {
   display: none; 
   flex-direction: column;
@@ -240,6 +243,7 @@ footer .social-icons a:hover {
   transform: scale(1.2); 
 }
 /* Breakpoint styling til mobil op til 767px */
+/*https://www.w3schools.com/cssref/css3_pr_flex-direction.php*/
 @media (max-width: 767px) {
   footer .social-icons {
     flex-direction: row; 
@@ -247,6 +251,7 @@ footer .social-icons a:hover {
   }
 }
 /* Breakpoint styling til tablet fra 768px til 1200px */
+/*https://www.w3schools.com/cssref/css3_pr_flex-direction.php*/
 @media (min-width: 768px) and (max-width: 1200px) {
   footer .social-icons {
     flex-direction: row; 
@@ -287,6 +292,7 @@ p {
   font-family: Arial Black; 
 }
 /* Box til hightlihhts */
+/*https://www.w3schools.com/cssref/css3_pr_flex-wrap.php*/
 .highlight-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -357,6 +363,7 @@ p {
   }
 }
 /* Standard styling til desktop breakpoint*/
+/*https://www.w3schools.com/cssref/css3_pr_flex-wrap.php*/
 .highlight-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -391,7 +398,7 @@ p {
   }
 }
 section.highlights .highlight-box {
-  width: 300px !important; /* for at tvinge ændringen igennem */
+  width: 300px !important; /* for at tvinge ændringen igennem */ /*https://www.w3schools.com/css/css_important.asp*/
   height: 300px !important; /* samme her */
 }
 @media (min-width: 1461px) {
@@ -458,6 +465,7 @@ header {
       margin: 0 auto; 
   }
 }
+/* Lerning Web Design, Robbins, side 326 */
 html, body {
   background-image: url(images/klap.jpg); 
   background-size: cover; 
@@ -465,7 +473,7 @@ html, body {
   background-repeat: no-repeat; 
   background-color: #ffffff; 
 }
-/* links og hover styling */
+/* links og hover styling */ /* https://www.w3schools.com/css/css3_transitions.asp */
 a {
   color: #000065; 
   text-decoration: none; 

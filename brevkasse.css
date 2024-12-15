@@ -9,10 +9,11 @@ h1, h2, h3 {
     box-sizing: border-box;
   }
   /* Styling af min header */
+  /*https://www.w3schools.com/howto/howto_css_sticky_element.asp*/
   header {
     background-color: #FFF7F8;
     padding: 30px 20px;
-    position: sticky;
+    position: sticky; /* sikre at min header følger med når man skroller, så man altid kan komme videre/væk unden problemer */
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid #000065;
@@ -71,6 +72,7 @@ h1, h2, h3 {
     justify-content: center; 
   }
   /* Styling af dropdown-menuen ved Desktop-breakpointen*/
+  /* https://www.freecodecamp.org/news/breakpoints-for-responsive-web-design/*/
   @media (min-width: 1401px) {
     nav ul li .dropdown {
         display: block; 
@@ -144,6 +146,7 @@ h1, h2, h3 {
       display: block; 
     }
   /* Samlet navigation */
+/* https://chatgpt.com/share/675e3ccf-bb3c-8007-a54f-304a85b59a97*/
   nav ul {
     display: none; 
     flex-direction: column;
@@ -240,6 +243,7 @@ h1, h2, h3 {
     transform: scale(1.2); 
   }
   /* Breakpoint styling til mobil op til 767px */
+  /*https://www.w3schools.com/cssref/css3_pr_flex-direction.php*/
   @media (max-width: 767px) {
     footer .social-icons {
       flex-direction: row; 
@@ -247,6 +251,7 @@ h1, h2, h3 {
     }
   }
   /* Breakpoint styling til tablet fra 768px til 1200px */
+  /*https://www.w3schools.com/cssref/css3_pr_flex-direction.php*/
   @media (min-width: 768px) and (max-width: 1200px) {
     footer .social-icons {
       flex-direction: row; 
@@ -254,6 +259,7 @@ h1, h2, h3 {
     }
   }
   /* Laptop breakpointen fra 1201px og større */
+  /*https://www.w3schools.com/cssref/css3_pr_flex-direction.php*/
   @media (min-width: 1201px) {
     footer .social-icons {
       flex-direction: row; 
@@ -464,7 +470,7 @@ header {
         margin: 0 auto;
     }
 }
-
+/* Lerning Web Design, Robbins, side 326 */
 html, body {
     background-image: url(images/klap.jpg);
     background-size: cover;
@@ -523,7 +529,7 @@ form input[type="text"] {
     font-size: 1rem;
     box-sizing: border-box;
 }
-
+/* https://www.w3schools.com/css/css3_transitions.asp */
 form input[type="submit"],
 form input[type="reset"] {
     padding: 10px 20px;
