@@ -498,3 +498,8 @@ a:hover {
 .highlight-item a:hover h3 {
   color: #FF7827; 
 }
+/* Så jeg sikre ikke at få en hoisontal skroller */
+/*https://www.w3schools.com/css/css_overflow.asp*/
+body {
+  overflow-x: hidden;
+}
