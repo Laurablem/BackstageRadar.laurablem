@@ -15,15 +15,15 @@
                     <a href="#">KUSTNERE & EVENTS</a>
                     <ul class="dropdown">
                         <li><a href="kommende.html">Kommende Kunstnere</a></li>
-                        <li><a href="#Tidligere Kunstnere">Tidligere Kunstnere</a></li>
-                        <li><a href="#Kommende Events">Kommende Events</a></li>
-                        <li><a href="#Tidligere Events">Tidligere Events</a></li>
+                        <li><a href="#TidligereKunstnere">Tidligere Kunstnere</a></li>
+                        <li><a href="#KommendeEvents">Kommende Events</a></li>
+                        <li><a href="#TidligereEvents">Tidligere Events</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#fordele">FORDELE</a>
                     <ul class="dropdown">
-                        <li><a href="#Bliv Medlem">Bliv Medlem</a></li>
+                        <li><a href="#BlivMedlem">Bliv Medlem</a></li>
                         <li><a href="#pointsystem">Pointsystem</a></li>
                         <li><a href="#Pre-sale">Pre-sale</a></li>
                         <li><a href="#Konkurrencer">Konkurrencer</a></li>
@@ -49,7 +49,7 @@
                     <a href="#om-radar">OM RADAR</a>
                     <ul class="dropdown">
                         <li><a href="historie.html">Radars Historie</a></li>
-                        <li><a href="#Huset og de frivillige">Huset og de frivillige</a></li>
+                        <li><a href="#Husetogdefrivillige">Huset og de frivillige</a></li>
                         <li><a href="#Baren">Baren</a></li>
                         <li><a href="#Kontakt">Kontakt</a></li>
                     </ul>
@@ -71,7 +71,7 @@
         </nav>
     </header>
 
-    <<!-- Javascript for at kunne samle højre og ventre navigation i burgermenuen -->
+    <!-- Javascript for at kunne samle højre og ventre navigation i burgermenuen -->
         <!-- https://www.w3schools.com/js/js_htmldom_navigation.asp -->
         <!-- https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/-->
     <script>
@@ -114,6 +114,7 @@
 <!-- main -->
     <div class="outer-box"> <!-- outerbox igen-->
         <main>
+        <div>
             <section class="welcome-section"> <!-- Selve brevkasse delen-->
                 <h1>BREVKASSEN</h1>
                 <p>Her kan du dele dine forslag til kunstnere og events, som du gerne vil opleve på Radar. 
@@ -151,7 +152,7 @@
      
    
 
-            <section>
+            <div>
                 <div class="inner-box">
                 <form onsubmit="handleFormSubmission(event)"> <!-- jeg har fundet hjlæp til formen hos w3shools --><!--w3shools:https://www.w3schools.com/html/html_form_input_types.asp#gsc.tab=0-->
                     <input type="checkbox" id="valgmulighed1" name="valgmulighed1" value="Q&A med Baseløs">
@@ -166,7 +167,7 @@
                     <button type="submit" class="submit-button">INDSEND</button>
                   </form>
                 </div>
-            </section>
+            </div>
 
             <script>
                 function handleFormSubmission(event) {

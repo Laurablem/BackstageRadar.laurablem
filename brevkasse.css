@@ -590,3 +590,9 @@ textarea {
 .submit-button:hover {
     background-color: #FF7827;
 }
+
+/* Sikre at der ikke er en hoisontal skroller */
+/*https://www.w3schools.com/css/css_overflow.asp*/
+body {
+  overflow-x: hidden;
+}
