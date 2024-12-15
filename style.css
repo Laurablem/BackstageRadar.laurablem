@@ -1,3 +1,4 @@
+/* overskrift font */
 h1, h2, h3 {
   font-family: Arial Black, Gadget, sans-serif;
   font-weight: bold;
@@ -234,7 +235,7 @@ footer .social-icons img {
   display: block;
   transition: transform 0.3s ease;
 }
-/* Samme hover-effekt, der forstøre ikonet */
+/* Hover-effekt, der forstøre ikonet */
 footer .social-icons a:hover {
   transform: scale(1.2); 
 }
@@ -283,7 +284,7 @@ body {
   color: black
 }
 p {
-  font-family: Arial Black;
+  font-family: Arial Black; 
 }
 /* Box til hightlihhts */
 .highlight-boxes {
@@ -412,6 +413,7 @@ section.highlights .highlight-box {
 .highlight-boxes {
   padding-top: 1rem; 
 }
+/* går igen på alle sider */
 .outer-box {
   max-width: 1400px; 
   margin: 0 auto; 
@@ -436,7 +438,7 @@ html, body {
   margin: 0; 
   padding: 0; 
 }
-/* Bevar farven indenfor rammen */
+/* Bevare farven indenfor rammen */
 .outer-box {
   background-color: #fef7f8; 
   max-width: 1400px; 
@@ -445,7 +447,7 @@ html, body {
   border: 5px solid #000065; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
-/* Headeren bevares som den er */
+/* Så headeren bliver bevaret som den er */
 header {
   background-color: #fef7f8; 
   border-bottom: 2px solid #000065; 
@@ -463,6 +465,7 @@ html, body {
   background-repeat: no-repeat; 
   background-color: #ffffff; 
 }
+/* links og hover styling */
 a {
   color: #000065; 
   text-decoration: none; 

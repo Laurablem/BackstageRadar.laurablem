@@ -1,3 +1,4 @@
+/* overskrift font */
 h1, h2, h3 {
     font-family: Arial Black, Gadget, sans-serif;
     font-weight: bold;
@@ -260,91 +261,104 @@ h1, h2, h3 {
     }
   }
   .outer-box {
-    max-width: 14px; /* Bredden på rammen */
-    margin: 0 auto; /* Centrer rammen */
-    padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
-    border: 5px solid #000065; /* Rammens farve og tykkelse */
-    background-color: #FFF7F8; /* Baggrundsfarve */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skygge for dybde */
-  }
-  header {
-    margin-bottom: 2rem; /* Justér afstanden mellem headeren og resten af indholdet */
-  }
-  footer {
-    margin-top: 2rem; /* Afstand mellem rammen og footeren */
-    background-color: #FFF7F8; /* Match baggrundsfarve */
-    padding: 2rem; /* Tilføj indvendig afstand */
-    text-align: center;
-    border-top: 2px solid #000065; /* Giv footeren en separat topkant */
-  }
-  /* Gør baggrunden uden for rammen hvid */
-  html, body {
-    background-color: #FFFFFF; /* Hvid baggrund uden for rammen */
-    margin: 0; /* Fjern standard marginer */
-    padding: 0; /* Fjern standard padding */
-  }
-  /* Bevar farven indenfor rammen */
-  .outer-box {
-    background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
-    max-width: 1400px; /* Begræns bredden på rammen */
-    margin: 0 auto; /* Centrer rammen på siden */
-    padding: 2rem; /* Indvendig afstand i rammen */
-    border: 5px solid #000065; /* Tyk ramme */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Let skygge for dybde */
-  }
-  /* Headeren bevares som den er */
-  header {
-    background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
-    border-bottom: 2px solid #000065; /* Behold headerens styling */
-  }
-  @media (max-width: 1460px) {
-    .outer-box {
-        max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
-        margin: 0 auto; /* Centrer rammen på siden */
-    }
-  }
-  html, body {
-    background-image: url(images/klap.jpg); /* Sti til dit billede */
-    background-size: cover; /* Billedet dækker hele baggrunden */
-    background-position: center; /* Billedet centreres */
-    background-repeat: no-repeat; /* Undgå gentagelse af billedet */
-    background-color: #ffffff; /* Baggrundsfarve som fallback */
-  }
-  a {
-    color: #000065; /* Linkets farve */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  a:hover {
-    color: #FF7827; /* Farveændring, når musen holdes over linket */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  .artist-list {
-    display: flex;
-    flex-direction: column; /* Kolonnevisning */
-    gap: 2rem; /* Afstand mellem kortene */
-    align-items: center; /* Centrer kortene */
+    max-width: 14px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    background-color: #FFF7F8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+header {
+    margin-bottom: 2rem;
+}
+
+footer {
+    margin-top: 2rem;
+    background-color: #FFF7F8;
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid #000065;
+}
+
+html, body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dette bevare farven inde for rammen */
+.outer-box {
+    background-color: #fef7f8;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Så headeren bliver bevaret som den er */
+header {
+    background-color: #fef7f8;
+    border-bottom: 2px solid #000065;
+}
+
+@media (max-width: 1460px) {
+    .outer-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+/* styling af body, stemningsbillede */
+html, body {
+    background-image: url(images/klap.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+/* styling af hover og link */
+a {
+    color: #000065;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7827;
+    text-decoration: none;
+}
+
+.artist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+/* de enkelte artistboxe */
 .artist-card {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Billeder og tekst justeres til venstre */
+    justify-content: flex-start;
     width: 100%;
-    max-width: 1300px; /* Større boksbredde */
-    border: 3px solid #000065; /* Ramme omkring hele kortet */
-    padding: 1.5rem; /* Mere indvendig plads */
+    max-width: 1300px;
+    border: 3px solid #000065;
+    padding: 1.5rem;
     background-color: #FFFFFF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+/* billederne i artistboxende */
 .artist-card img {
-    width: 500px; /* Større billeder */
+    width: 500px;
     height: auto;
-    border: 2px solid #000065; /* Ramme omkring billedet */
-    margin-right: 1.5rem; /* Afstand til teksten */
+    border: 2px solid #000065;
+    margin-right: 1.5rem;
 }
+
 .artist-info {
-    flex: 1; /* Fyld den resterende plads */
-    text-align: center; /* Juster tekst til venstre */
+    flex: 1;
+    text-align: center;
 }
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -352,79 +366,89 @@ h1 {
     font-weight: bold;
     text-align: center;
     margin-top: 30px;
-  }
-  p {
+}
+
+p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.5;
     margin-bottom: 70px;
     text-align: center;
-  }
-  p {
-    font-family: Arial Black
-  }
+}
+
+p {
+    font-family: Arial Black;
+}
+/* kunsternavnene */
 .artist-info h2 {
-    font-size: 2rem; /* Større skriftstørrelse */
+    font-size: 2rem;
     color: #FF7827;
     margin: 0;
     font-weight: bold;
     text-align: center;
 }
-/* Responsiv styling */
+
 @media (max-width: 1460px) {
     .artist-card {
-        max-width: 95%; /* Reducér bredden på kortene */
-        flex-direction: row; /* Bevar billede til venstre */
+        max-width: 95%;
+        flex-direction: row;
     }
     .artist-card img {
-        width: 500px; /* Standard billedstørrelse */
+        width: 500px;
         height: auto;
     }
 }
-/* Tablet breakpoint (op til 991px) */
+
+/* Tablet-breakpoint til 991px */
 @media (max-width: 991px) {
     .artist-card {
-        max-width: 95%; /* Juster boksbredde */
+        max-width: 95%;
     }
     .artist-card img {
-        width: 350px; /* Gør billedet større på tablets */
-        height: auto; /* Bevar proportionerne */
+        width: 350px;
+        height: auto;
     }
 }
-/* Mobil breakpoint (op til 767px) */
+
+/* Mobil-breakpoint  til 767px */
 @media (max-width: 767px) {
     .artist-card {
-        flex-direction: column; /* Skift layout til kolonne */
-        align-items: center; /* Centrer indholdet */
-        text-align: center; /* Juster teksten til midten */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 1rem;
     }
     .artist-info {
-        order: -1; /* Flyt teksten over billedet */
-        margin-bottom: 1rem; /* Afstand mellem tekst og billede */
+        order: -1;
+        margin-bottom: 1rem;
     }
 
     .artist-card img {
-        width: 250px; /* Gør billedet lidt større */
+        width: 250px;
         height: auto;
-        margin: 0; /* Fjern margin omkring billedet */
+        margin: 0;
     }
 }
+
 .artist-card a img {
-    transition: transform 0.3s ease, border 0.3s ease; /* Glidende overgang */
-  }
-  .artist-card a img:hover {
-    transform: scale(1.05); /* Zoomer billedet ind */
-  }
-  .artist-info a h2 {
-    color: #FF7827; /* Standardfarve */
-    text-decoration: none; /* Fjerner standard understregning */
-    transition: color 0.3s ease; /* Glidende overgang ved farveskift */
-  }
-  .artist-info a:hover h2 {
-    color: #000065; /* Farve ved hover */
-  }
-  body {
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.artist-card a img:hover {
+    transform: scale(1.05);
+}
+/* faveskrift mellem de to overskrift farver ved hover */
+.artist-info a h2 {
+    color: #FF7827;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.artist-info a:hover h2 {
+    color: #000065;
+}
+/* Sikre at der ikke er en hoisontal skroller */
+body {
     overflow-x: hidden;
 }

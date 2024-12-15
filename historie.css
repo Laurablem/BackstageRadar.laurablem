@@ -1,3 +1,4 @@
+/* overskrifter font */
 h1, h2, h3 {
     font-family: Arial Black, Gadget, sans-serif;
     font-weight: bold;
@@ -92,7 +93,7 @@ h1, h2, h3 {
         padding: 10px 0; 
     }
     .burger-menu {
-        display: none; /* Dette skjul burger-menuen på desktop */
+        display: none; /* Dette skjuler burger-menuen på desktop */
     }
   }
   /*Mine dropdown-menu punkter */
@@ -234,7 +235,7 @@ h1, h2, h3 {
     display: block;
     transition: transform 0.3s ease;
   }
-  /* Samme hover-effekt, der forstøre ikonet */
+  /* hover-effekt der forstøre ikonet */
   footer .social-icons a:hover {
     transform: scale(1.2); 
   }
@@ -259,73 +260,9 @@ h1, h2, h3 {
       gap: 2.5rem; 
     }
   }
-  .outer-box {
-    max-width: 1400px; /* Bredden på rammen */
-    margin: 0 auto; /* Centrer rammen */
-    padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
-    border: 5px solid #000065; /* Rammens farve og tykkelse */
-    background-color: #FFF7F8; /* Baggrundsfarve */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skygge for dybde */
-  }
-  header {
-    margin-bottom: 2rem; /* Justér afstanden mellem headeren og resten af indholdet */
-  }
-  footer {
-    margin-top: 2rem; /* Afstand mellem rammen og footeren */
-    background-color: #FFF7F8; /* Match baggrundsfarve */
-    padding: 2rem; /* Tilføj indvendig afstand */
-    text-align: center;
-    border-top: 2px solid #000065; /* Giv footeren en separat topkant */
-  }
-  /* Gør baggrunden uden for rammen hvid */
-  html, body {
-    background-color: #FFFFFF; /* Hvid baggrund uden for rammen */
-    margin: 0; /* Fjern standard marginer */
-    padding: 0; /* Fjern standard padding */
-  }
-  /* Bevar farven indenfor rammen */
-  .outer-box {
-    background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
-    max-width: 1400px; /* Begræns bredden på rammen */
-    margin: 0 auto; /* Centrer rammen på siden */
-    padding: 2rem; /* Indvendig afstand i rammen */
-    border: 5px solid #000065; /* Tyk ramme */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Let skygge for dybde */
-  }
-  /* Headeren bevares som den er */
-  header {
-    background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
-    border-bottom: 2px solid #000065; /* Behold headerens styling */
-  }
-  @media (max-width: 1460px) {
-    .outer-box {
-        max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
-        margin: 0 auto; /* Centrer rammen på siden */
-    }
-  }
-  
-  html, body {
-    background-image: url(images/klap.jpg); /* Sti til dit billede */
-    background-size: cover; /* Billedet dækker hele baggrunden */
-    background-position: center; /* Billedet centreres */
-    background-repeat: no-repeat; /* Undgå gentagelse af billedet */
-    background-color: #ffffff; /* Baggrundsfarve som fallback */
-  }
-  
-  
-  a {
-    color: #000065; /* Linkets farve */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  
-  a:hover {
-    color: #FF7827; /* Farveændring, når musen holdes over linket */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  
-
-  .outer-box {
-    max-width: 1200px;
+  /* samme outerbox, som på de anre sider */
+.outer-box {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
     border: 5px solid #000065;
@@ -333,13 +270,82 @@ h1, h2, h3 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+header {
+    margin-bottom: 2rem;
+}
+
+footer {
+    margin-top: 2rem;
+    background-color: #FFF7F8;
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid #000065;
+}
+
+/* Gør baggrunden uden for rammen hvid */
+html, body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Beholder farven indenfor rammen */
+.outer-box {
+    background-color: #fef7f8;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Så headeren bliver bevaret som den er */
+header {
+    background-color: #fef7f8;
+    border-bottom: 2px solid #000065;
+}
+
+@media (max-width: 1460px) {
+    .outer-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+html, body {
+    background-image: url(images/klap.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+
+a {
+    color: #000065;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7827;
+    text-decoration: none;
+}
+
+.outer-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    background-color: #FFF7F8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* til artiklen*/
 .inner-box {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
-    border: 3px solid #000065; /* Ramme omkring inner box */
-    background-color: #ffffff; /* Hvid baggrund */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    border: 3px solid #000065;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
@@ -348,8 +354,7 @@ h3 {
     margin-bottom: 1rem;
     text-align: left;
     margin-bottom: 5px;
- }
-
+}
 
 .radar-article p {
     color: #000065;
@@ -359,93 +364,94 @@ h3 {
     text-align: left;
 }
 
+/* typografi styling */
 h2 {
     color: #FF7827;
-    margin-bottom: 15px; /* Mindre afstand under <h2> */
+    margin-bottom: 15px;
 }
 
 p {
-    margin-top: 10px; /* Mindre afstand over <p> */
-    margin-bottom: 20px; /* Tilføj en passende afstand under <p> */
-    line-height: 1.6; /* Bevar en læsevenlig linjehøjde */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-h1 {color: #000065;
+h1 {
+    color: #000065;
     text-align: left;
 }
 
-h5 {color: #000065;
+h5 {
+    color: #000065;
     text-align: center;
-    font-size: 2.5rem
+    font-size: 2.5rem;
 }
 
-/* Standard layout */
+/* Standard layoutet */
 .text-image-container {
-    display: flex; /* Fleksibelt layout */
-    flex-direction: row; /* Tekst til venstre og billeder til højre */
-    align-items: flex-start; /* Tilpas billeder og tekst vertikalt */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     gap: 1.5rem;
     margin: 1.5rem 0;
 }
 
 .text-content {
     flex: 2;
-    max-width: 100%; /* Bevar tekstens breddebegrænsning */
+    max-width: 100%;
     text-align: left;
     hyphens: auto;
     word-break: break-word;
     line-height: 1.6;
-    margin: 0; /* Bevar tekstens position */
+    margin: 0;
 }
 
-/* Centrer kun billeder */
+/* Så kun billeder bliver centreret */
 .image-container {
     display: flex;
-    flex-direction: column; /* Lodret placering af billeder */
-    align-items: center; /* Centrer billeder horisontalt */
-    justify-content: center; /* Centrer billeder vertikalt */
-    margin: 0 auto; /* Sørg for centreret placering */
-    gap: 1.5rem; /* Afstand mellem billeder */
-    width: 100%; /* Sørg for, at containeren fylder */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .image-content {
-    align-items: center; /* Centrer billedet og teksten */
+    align-items: center;
     display: flex;
-    flex-direction: column; /* Sørg for, at billedet og billedteksten er lodret placeret */
-    text-align: center; /* Centrer billedteksten */
-    margin: 0 auto; /* Sørg for centreret placering */
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .image-content img {
-    display: block; /* Sørg for korrekt billedopførsel */
-    max-width: 400px; /* Begræns billedets bredde */
-    width: 100%; /* Gør billedet responsivt */
-    height: auto; /* Bevar proportionerne */
-    border: 3px solid #000065; /* Tilføj ramme */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tilføj skygge */
-    margin: 0 auto; /* Sørg for, at billedet er centreret */
-    margin-top: 30px;
-    margin-bottom: 30px;
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border: 3px solid #000065;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
 }
 
-/* Layoutændringer ved mindre skærme */
+/* Layoutet ved mindre skærme */
 @media (max-width: 991px) {
     .text-image-container {
-        flex-direction: column; /* Skift layout til lodret */
+        flex-direction: column;
         align-items: center;
     }
 
     .image-container {
-        align-items: center; /* Centrer billeder på mindre skærme */
+        align-items: center;
     }
 
     .image-content img {
-        margin: 0 auto; /* Centrer billedet på mindre skærme */
+        margin: 0 auto;
     }
 }
 
-/* Layout for mobil */
+/* Layoutet til mobil */
 @media (max-width: 767px) {
     .inner-box {
         padding: 1rem;
@@ -464,11 +470,11 @@ h5 {color: #000065;
     }
 
     .image-content img {
-        max-width: 100%; /* Gør billedet responsivt */
-        margin: 0 auto; /* Centrer billedet */
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
-
+/* Så jeg sikre ikke at få en hoisontal skroller */
 body {
     overflow-x: hidden;
 }

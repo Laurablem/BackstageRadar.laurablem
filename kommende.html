@@ -71,14 +71,14 @@
         </nav>
     </header>
 
-    
+         <!-- Javascript for at kunne samle højre og ventre navigation i burgermenuen -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.getElementById('burger-btn');
             const leftNav = document.querySelector('.nav-links.left');
             const rightNav = document.querySelector('.nav-links.right');
     
-            // Kombinér venstre og højre navigation i mobilvisning
+            // Kombinér venstre og højre navigation til mobilvisningen
             burgerBtn.addEventListener('click', () => {
                 leftNav.classList.toggle('active');
                 rightNav.classList.toggle('active');
@@ -109,18 +109,19 @@
     </script>
     
 
-
-    <div class="outer-box">
+<!-- mainen -->
+    <div class="outer-box"> <!-- jeg har lavet en outerbox på alle sider-->
             <main>
                 <section class="artists">
-                    <h1>KOMMENDE ARTISTER</h1>
+                    <h1>KOMMENDE KUNSTNERE</h1>
                     <p>
                         Glæd jer til foråret 2025! Der kommer de vildeste kunstnere, mange af dem har i
-                        endda selv valgt gennem brevkassen! På denne side kan I lære kunstnerne lidt bedre at kende. God fornøjelse!
+                        endda selv valgt gennem <a href="brevkasse.html" target="_blank" rel="noopener noreferrer">BREVKASSEN</a>
+                    ! På denne side kan I lære kunstnerne lidt bedre at kende. God fornøjelse!
                     </p>
-                    <div class="artist-list">
+                    <div class="artist-list"> 
 
-                        <div class="artist-card">
+                        <div class="artist-card"> <!-- her bliver de forskellige kunstnere vist, kun baseløssiden er funktionel -->
                             <a href="baseløs.html">
                             <img src="images/baseløs.png" alt="Artist Image">
                             </a>
@@ -158,7 +159,7 @@
             </main>
     </div>
     
-
+<!-- Footeren med social meadia ikoner som diagerer videre til radars andre platforme-->
     <footer>
         <div class="social-icons">
             <a href="https://www.facebook.com/radarlive/" target="_blank" aria-label="Facebook">

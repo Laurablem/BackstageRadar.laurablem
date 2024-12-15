@@ -1,3 +1,4 @@
+  /* Overskrifter typografi */
 h1, h2, h3 {
     font-family: Arial Black, Gadget, sans-serif;
     font-weight: bold;
@@ -234,7 +235,7 @@ h1, h2, h3 {
     display: block;
     transition: transform 0.3s ease;
   }
-  /* Samme hover-effekt, der forstøre ikonet */
+  /* Samme hover-effekt (som på logo), der forstøre ikonet */
   footer .social-icons a:hover {
     transform: scale(1.2); 
   }
@@ -260,71 +261,75 @@ h1, h2, h3 {
     }
   }
   .outer-box {
-    max-width: 1400px; /* Bredden på rammen */
-    margin: 0 auto; /* Centrer rammen */
-    padding: 2rem; /* Ens afstand til alle sider, inkl. toppen */
-    border: 5px solid #000065; /* Rammens farve og tykkelse */
-    background-color: #FFF7F8; /* Baggrundsfarve */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Skygge for dybde */
-  }
-  header {
-    margin-bottom: 2rem; /* Justér afstanden mellem headeren og resten af indholdet */
-  }
-  footer {
-    margin-top: 2rem; /* Afstand mellem rammen og footeren */
-    background-color: #FFF7F8; /* Match baggrundsfarve */
-    padding: 2rem; /* Tilføj indvendig afstand */
-    text-align: center;
-    border-top: 2px solid #000065; /* Giv footeren en separat topkant */
-  }
-  /* Gør baggrunden uden for rammen hvid */
-  html, body {
-    background-color: #FFFFFF; /* Hvid baggrund uden for rammen */
-    margin: 0; /* Fjern standard marginer */
-    padding: 0; /* Fjern standard padding */
-  }
-  /* Bevar farven indenfor rammen */
-  .outer-box {
-    background-color: #fef7f8; /* Bevar baggrundsfarven i rammen */
-    max-width: 1400px; /* Begræns bredden på rammen */
-    margin: 0 auto; /* Centrer rammen på siden */
-    padding: 2rem; /* Indvendig afstand i rammen */
-    border: 5px solid #000065; /* Tyk ramme */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Let skygge for dybde */
-  }
-  /* Headeren bevares som den er */
-  header {
-    background-color: #fef7f8; /* Sørg for, at headerens farve matcher */
-    border-bottom: 2px solid #000065; /* Behold headerens styling */
-  }
-  @media (max-width: 1460px) {
-    .outer-box {
-        max-width: 90%; /* Sørg for, at rammen fylder 90% af skærmens bredde */
-        margin: 0 auto; /* Centrer rammen på siden */
-    }
-  }
-  
-  html, body {
-    background-image: url(images/klap.jpg); /* Sti til dit billede */
-    background-size: cover; /* Billedet dækker hele baggrunden */
-    background-position: center; /* Billedet centreres */
-    background-repeat: no-repeat; /* Undgå gentagelse af billedet */
-    background-color: #ffffff; /* Baggrundsfarve som fallback */
-  }
-  
-  
-  a {
-    color: #000065; /* Linkets farve */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  
-  a:hover {
-    color: #FF7827; /* Farveændring, når musen holdes over linket */
-    text-decoration: none; /* Fjern understregning ved hover */
-  }
-  
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    background-color: #FFF7F8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .outer-box {
+header {
+    margin-bottom: 2rem;
+}
+
+footer {
+    margin-top: 2rem;
+    background-color: #FFF7F8;
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid #000065;
+}
+
+/* Gør baggrunden uden for rammen hvid */
+html, body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bevar farven indenfor rammen */
+.outer-box {
+    background-color: #fef7f8;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 5px solid #000065;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headeren bevares som den er */
+header {
+    background-color: #fef7f8;
+    border-bottom: 2px solid #000065;
+}
+
+@media (max-width: 1460px) {
+    .outer-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+html, body {
+    background-image: url(images/klap.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+
+a {
+    color: #000065;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7827;
+    text-decoration: none;
+}
+
+.outer-box {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -337,18 +342,17 @@ h1, h2, h3 {
     max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
-    border: 3px solid #000065; /* Ramme omkring inner box */
-    background-color: #ffffff; /* Hvid baggrund */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    border: 3px solid #000065;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+  /* text styling */
 .band-article h3 {
     color: #FF7827;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: left;
- }
-
+}
 
 .band-article p {
     color: #000065;
@@ -358,24 +362,26 @@ h1, h2, h3 {
     text-align: left;
 }
 
-h2 { color: #FF7827;
-margin-bottom: 30px;
+h2 {
+    color: #FF7827;
+    margin-bottom: 30px;
 }
 
-h1 {color: #000065;
+h1 {
+    color: #000065;
     text-align: left;
 }
 
-h5 {color: #000065;
+h5 {
+    color: #000065;
     text-align: center;
-    font-size: 2.5rem
+    font-size: 2.5rem;
 }
 
-h6 {color: #FF7827;
+h6 {
+    color: #FF7827;
     text-align: left;
 }
-
-
 
 /* Responsiv styling */
 @media (max-width: 991px) {
@@ -415,14 +421,14 @@ h6 {color: #FF7827;
 
 .text-content {
     flex: 2;
-    text-align: justify; /* Sørger for jævn tekstfordeling */
+    text-align: justify;
 }
 
 .image-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrer billedet og billedteksten */
+    align-items: center;
 }
 
 .image-content img {
@@ -432,7 +438,7 @@ h6 {color: #FF7827;
     border: 3px solid #000065;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+  /* text under pressebillede */
 .image-content figcaption {
     text-align: center;
     font-size: 0.9rem;
@@ -444,20 +450,19 @@ h6 {color: #FF7827;
 /* Responsiv styling */
 @media (max-width: 991px) {
     .text-image-container {
-        flex-direction: column; /* Skift layout til lodret */
-        align-items: center; /* Centrer elementer */
+        flex-direction: column;
+        align-items: center;
     }
 
     .text-content {
-        order: 2; /* Flyt tekstindhold til at komme efter billedet */
+        order: 2;
     }
 
     .image-content {
-        order: 1; /* Flyt billedindhold til at komme først */
-        margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
+        order: 1;
+        margin-bottom: 1rem;
     }
 }
-
 
 @media (max-width: 767px) {
     .text-content p {
@@ -468,51 +473,51 @@ h6 {color: #FF7827;
         max-width: 100%;
     }
 }
-
+  /* inforgrafik sektion */
 .infographic-container {
-    display: flex; /* Brug flexbox til at centrere billedet */
-    justify-content: center; /* Centrer horisontalt */
-    align-items: center; /* Centrer lodret */
-    margin: 2rem auto; /* Centrer containeren og tilføj margin over/under */
-    padding: 10px; /* Indvendig afstand */
-    text-align: center; /* Sørg for, at alt indhold inde i containeren er centreret */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 10px;
+    text-align: center;
 }
 
 .infographic {
-    max-width: 60%; /* Reducér billedets bredde til 60% af containerens bredde */
-    height: auto; /* Bevar proportionerne */
-    display: block; /* Fjern eventuelle mellemrum under billedet */
+    max-width: 60%;
+    height: auto;
+    display: block;
 }
 
-/* Laptop-version: Skærme mellem 992px og 1400px */
+/* Laptop Skærme mellem 992px og 1400px */
 @media (max-width: 1400px) and (min-width: 992px) {
     .infographic {
-        max-width: 50%; /* Reducér billedet yderligere til 50% på laptops */
+        max-width: 50%;
     }
 }
 
-/* Responsiv styling for tablets */
+/* Responsiv styling til tablet */
 @media (max-width: 991px) {
     .infographic-container {
-        padding: 8px; /* Mindre padding på tablets */
+        padding: 8px;
     }
 
     .infographic {
-        max-width: 70%; /* Reducér billedet til 70% af containerens bredde */
+        max-width: 70%;
     }
 }
 
 /* Responsiv styling for mobil */
 @media (max-width: 767px) {
     .infographic-container {
-        padding: 5px; /* Mindre padding */
+        padding: 5px;
     }
 
     .infographic {
-        max-width: 80%; /* Reducér billedet til 80% af containerens bredde */
+        max-width: 80%;
     }
 }
-
+/* Så jeg sikre ikke at få en hoisontal skroller */
 body {
     overflow-x: hidden;
 }
